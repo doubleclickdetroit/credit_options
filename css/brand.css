@@ -1,0 +1,71 @@
+/*******************************************************************************
+**** Helpers
+*******************************************************************************/
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*******************************************************************************
+**** Variables :: Modify this for branding colors
+*******************************************************************************/
+/*******************************************************************************
+**** Styling
+*******************************************************************************/
+a {
+  color: #049cdb;
+}
+a:hover {
+  color: #0378a9;
+}
+.navbar .nav > li > a,
+header.navbar .ui-navigation .nav > li > a {
+  color: #999999;
+}
+.navbar .nav > li > a:hover,
+header.navbar .ui-navigation .nav > li > a:hover {
+  color: #808080;
+}
+.navbar .nav > li.active > a,
+header.navbar .ui-navigation .nav > li.active > a,
+.navbar .nav > li.active > a:hover,
+header.navbar .ui-navigation .nav > li.active > a:hover {
+  color: #ffffff;
+  background-color: #049cdb;
+}
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover {
+  color: #0378a9;
+}
+.dropdown-menu {
+  background-color: #ffffff;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: #ffffff;
+  background-color: #0378a9;
+}

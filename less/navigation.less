@@ -1,0 +1,67 @@
+/*******************************************************************************
+**** Navigation
+*******************************************************************************/
+header.navbar {
+	z-index: 1;
+	margin-bottom: 0;
+
+	@link-spacing: 10px;
+
+	&:not(.navbar-fixed-top) {
+		position: relative;
+	}
+
+	.nav > li > a {
+		outline    : none;
+		text-shadow: none;
+
+		> i {
+			.opacity(80);
+			margin-right: @link-spacing;
+		}
+
+		> b {
+			.opacity(80);
+			margin-left: @link-spacing;
+		}
+	}
+
+	.ui-session .nav > li > a {
+		padding: auto @link-spacing;
+		color  : white;
+		.opacity(80);
+		.transition(all .3s ease-in);
+
+		&:hover {
+			.opacity(100);
+		}
+	}
+
+	.ui-navigation {
+		.box-shadow(0 0 5px lighten(@grayLight, 5%));
+		border-bottom: 1px solid lighten(@grayLight, 5%);
+		background-color: @white;
+
+		#session-collapse {
+			.clearfix();
+		}
+
+		.nav li {
+
+			// Active nav items
+			&.active > a,
+			&.active > a:hover {
+				outline         : 0 none;
+				color           : @navbarLinkColor;
+				background-color: transparent;
+			}
+
+			&.dropdown.open .caret,
+			&.dropdown .dropdown-toggle .caret {
+				border-bottom-color: @grayDark;
+				border-top-color   : @grayDark;
+			}
+		}
+
+	}
+}

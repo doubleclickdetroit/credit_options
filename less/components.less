@@ -1,0 +1,164 @@
+/*******************************************************************************
+**** Content
+*******************************************************************************/
+[data-page] {
+	// #gradient > .radial(#fff, #eaeaea);
+	padding-top: @gridGutterWidth;
+
+	/***************************************************************************
+	**** Horizontal List
+	***************************************************************************/
+	.list-horizontal {
+		margin: @gridGutterWidth 0 0;
+
+		li {
+			display: inline-block;
+			.ie7-inline-block();
+
+			&:before { content: " | "; }
+			&:first-child:before { content: ""; }
+		}
+	}
+
+
+	/***************************************************************************
+	**** Link Group
+	***************************************************************************/
+	.ui-linkgroup {
+		.padding-sides();
+		.list-horizontal();
+
+		line-height: 35px;
+
+		li, li a { color: @white; }
+	}
+
+
+	/***************************************************************************
+	**** Panel
+	***************************************************************************/
+	.ui-panel {
+		header {
+			padding: 0 @gridGutterWidth;
+			line-height: 50px;
+			border-bottom: 1px solid #ebebeb;
+
+			h1, h2, h3, p {
+				margin: 0px;
+				line-height: inherit;
+				font-weight: normal;
+			}
+			h1, h2, h3 { font-size: 20px; }
+		}
+
+		// Table Styles
+		.table {
+			margin-bottom: 0;
+
+			tbody {
+				th, td {
+					border-top-style: dotted;
+				}
+
+				th { color: @grayDark; font-weight: normal; }
+				td { color: @grayLight; }
+
+				&:first-child tr:first-child {
+					th, td {
+						border-top: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Mixin: .ui-panel
+	.comp-panel() {
+		.border-radius(5px);
+		.box-shadow( 0 0 7px darken(@grayLighter, 15%) );
+		background-color: @white;
+	}
+
+	// Tablet to Desktop
+	@media (min-width: 768px) {
+		.ui-panel {
+			// Render as one panel (as intended).
+			.comp-panel();
+		}
+	}
+
+	// Mobile portrait & landscape
+	@media (max-width: 767px) {
+		.ui-panel {
+			// Render each ".span*" child as it's own panel.
+			> .row > [class*="span"] {
+				.margin-top();
+				.comp-panel();
+			}
+
+			header.text-right { text-align: left; }
+		}
+	}
+
+
+	/***************************************************************************
+	**** Tiles
+	***************************************************************************/
+	.ui-tiles {
+
+		.drop-shadow {
+			position: relative;
+			float   : left;
+			width   : 100%;
+
+			&:before,
+			&:after {
+				content : "";
+				position: absolute;
+				z-index : 1;
+			}
+		}
+
+		.curved {
+			&:before {
+				top   : 10px;
+				bottom: 10px;
+				left  : 0;
+				right : 50%;
+				-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+				-moz-box-shadow   : 0 0 15px rgba(0,0,0,0.3);
+				box-shadow        : 0 0 15px rgba(0,0,0,0.3);
+				-moz-border-radius: 10px / 100px;
+				border-radius     : 10px / 100px;
+			}
+		}
+
+		.curved-hz-1 {
+			&:before {
+				top   : 20px;
+				bottom: 20px;
+				left  : -50px;
+				width : 50px;
+				-moz-border-radius: 45%;
+				border-radius     : 45%;
+			}
+		}
+
+		overflow: hidden;
+		border-left: 1px solid darken(@grayLighter, 10%);
+		#gradient > .vertical-three-colors( @white, @white, 35%, darken(@white, 5%) );
+
+		> .ui-shadow {
+			.drop-shadow();
+			.curved();
+			.curved-hz-1();
+		}
+
+		.ui-tile {
+			.padding-all();
+			border-top: 1px dotted darken(@grayLighter, 10%);
+
+			&:first-child { border-top-width: 0; }
+		}
+	}
+}

@@ -1,0 +1,77 @@
+/*******************************************************************************
+**** Helpers
+*******************************************************************************/
+@import "variables.less";
+@import "mixins.less";
+
+
+/*******************************************************************************
+**** Variables :: Modify this for branding colors
+*******************************************************************************/
+@primaryColor  : @blue;
+@secondaryColor: @orange;
+
+@linkColor     : @primaryColor;
+@linkColorHover: darken(@linkColor, 10%);
+
+@btnPrimaryBackground         : @linkColor;
+@btnPrimaryBackgroundHighlight: spin(@btnPrimaryBackground, 15%);
+
+@navbarText           : @grayLight;
+@navbarLinkColor      : @grayLight;
+@navbarLinkColorHover : darken(@navbarLinkColor, 10%);
+@navbarLinkColorActive: @navbarLinkColorHover;
+@navbarBrandColor     : @navbarLinkColor;
+
+@dropdownBackground         : @white;
+@dropdownLinkColorHover     : @white;
+@dropdownLinkBackgroundHover: @linkColorHover;
+
+
+/*******************************************************************************
+**** Styling
+*******************************************************************************/
+// Links
+a {
+	color: @linkColor;
+	&:hover { color: @linkColorHover; }
+}
+
+// Navigation
+// Links
+.navbar .nav > li,
+header.navbar .ui-navigation .nav > li {
+	> a {
+		color: @navbarLinkColor;
+
+		&:hover {
+			color: @navbarLinkColorHover;
+		}
+	}
+
+	&.active > a,
+	&.active > a:hover {
+		color: @white;
+		background-color: @linkColor;
+	}
+}
+
+// Open dropdowns
+// -------------------------
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav > li.dropdown.open.active > a:hover {
+	color: @linkColorHover;
+}
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+	background-color: @dropdownBackground;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+	color           : @dropdownLinkColorHover;
+	background-color: @dropdownLinkBackgroundHover;
+}

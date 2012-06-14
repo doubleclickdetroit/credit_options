@@ -1,0 +1,45 @@
+/*******************************************************************************
+**** Base UI
+*******************************************************************************/
+html, body { height: 100%; }
+body {
+	@bg: darken(@grayLighter, 3%);
+
+	// Tablet to Desktop
+	@media (min-width: 768px) {
+		background-attachment: fixed !important;
+		#gradient > .directional(#fff 30%, @bg, 90deg);
+	}
+
+	// Mobile portrait & landscape
+	@media (max-width: 767px) {
+		background-color: @bg;
+	}
+}
+
+
+
+/*******************************************************************************
+**** General Helpers
+*******************************************************************************/
+.margin-top    { margin-top   : @gridGutterWidth; }
+.margin-right  { margin-right : @gridGutterWidth; }
+.margin-bottom { margin-bottom: @gridGutterWidth; }
+.margin-left   { margin-left  : @gridGutterWidth; }
+.margin-sides  { .margin-right(); .margin-left(); }
+.margin-tops   { .margin-top(); .margin-bottom(); }
+.margin-all    { .margin-sides(); .margin-tops(); }
+
+.padding-top    { padding-top   : @gridGutterWidth; }
+.padding-right  { padding-right : @gridGutterWidth; }
+.padding-bottom { padding-bottom: @gridGutterWidth; }
+.padding-left   { padding-left  : @gridGutterWidth; }
+.padding-sides  { .padding-right(); .padding-left(); }
+.padding-tops   { .padding-top(); .padding-bottom(); }
+.padding-all    { .padding-sides(); .padding-tops(); }
+
+.grayLight { color: @grayLight; }
+
+.text-left   { text-align: left;   }
+.text-center { text-align: center; }
+.text-right  { text-align: right;  }
