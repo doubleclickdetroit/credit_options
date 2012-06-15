@@ -1,26 +1,5 @@
 /*******************************************************************************
-**** Base UI
-*******************************************************************************/
-html, body { height: 100%; }
-body {
-	@bg: darken(@grayLighter, 3%);
-
-	// Tablet to Desktop
-	@media (min-width: 768px) {
-		background-attachment: fixed !important;
-		#gradient > .directional(#fff 30%, @bg, 90deg);
-	}
-
-	// Mobile portrait & landscape
-	@media (max-width: 767px) {
-		background-color: @bg;
-	}
-}
-
-
-
-/*******************************************************************************
-**** General Helpers
+**** Helpers
 *******************************************************************************/
 .margin-top    { margin-top   : @gridGutterWidth; }
 .margin-right  { margin-right : @gridGutterWidth; }
@@ -38,8 +17,18 @@ body {
 .padding-tops   { .padding-top(); .padding-bottom(); }
 .padding-all    { .padding-sides(); .padding-tops(); }
 
-.grayLight { color: @grayLight; }
+.text-gray         { color: @gray !important;        }
+.text-gray_light   { color: @grayLight !important;   }
+.text-gray_lighter { color: @grayLighter !important; }
+.text-gray_dark    { color: @grayDark !important;    }
+.text-gray_darker  { color: @grayDarker !important;  }
+
+.text-uppercase { text-transform: uppercase; }
 
 .text-left   { text-align: left;   }
 .text-center { text-align: center; }
 .text-right  { text-align: right;  }
+
+.layout-block       { display: block; }
+.layout-inline      { display: inline; }
+.layout-inlineblock { display: inline-block; .ie7-inline-block(); }

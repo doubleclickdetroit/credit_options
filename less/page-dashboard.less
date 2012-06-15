@@ -1,0 +1,48 @@
+@import "variables.less";
+@import "mixins.less";
+@import "base.less";
+
+
+.ui-panel {
+	// Tablet to Desktop
+	@media (min-width: 768px) {
+		.ui-linkgroup {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+}
+
+.ui-tiles {
+	a { font-size: .9em; }
+}
+
+.tile-messages {
+	p {
+		margin: 0;
+		line-height: normal;
+		&:first-child { font-size: 1.1em; }
+	}
+
+	a { display: inline-block; margin-top: 3px; }
+}
+
+.tile-rewards {
+	.clearfix {
+		margin-bottom: 10px;
+
+		h3 {
+			display: inline-block;
+			.ie7-inline-block();
+			line-height: 40px;
+			font-size  : 4em;
+			font-weight: 500;
+		}
+		small {
+			display: inline-block;
+			.ie7-inline-block();
+			line-height: normal;
+			text-transform: uppercase;
+		}
+	}
+}

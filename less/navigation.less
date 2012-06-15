@@ -11,6 +11,17 @@ header.navbar {
 		position: relative;
 	}
 
+	.brand {
+		padding: 10px @gridGutterWidth;
+
+		img { max-width: 200px; }
+
+		// Mobile portrait & landscape
+		@media (max-width: 767px) {
+			img { max-width: 125px; }
+		}
+	}
+
 	.nav > li > a {
 		outline    : none;
 		text-shadow: none;
@@ -46,22 +57,25 @@ header.navbar {
 			.clearfix();
 		}
 
-		.nav li {
+		.nav {
+			li {
+				font-size: 1.1em;
+				ul li { font-size: .9em; }
 
-			// Active nav items
-			&.active > a,
-			&.active > a:hover {
-				outline         : 0 none;
-				color           : @navbarLinkColor;
-				background-color: transparent;
-			}
+				// Active nav items
+				&.active > a,
+				&.active > a:hover {
+					outline         : 0 none;
+					color           : @navbarLinkColor;
+					background-color: transparent;
+				}
 
-			&.dropdown.open .caret,
-			&.dropdown .dropdown-toggle .caret {
-				border-bottom-color: @grayDark;
-				border-top-color   : @grayDark;
+				&.dropdown.open .caret,
+				&.dropdown .dropdown-toggle .caret {
+					border-bottom-color: @grayLight;
+					border-top-color   : @grayLight;
+				}
 			}
 		}
-
 	}
 }

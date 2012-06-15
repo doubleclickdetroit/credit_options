@@ -34,11 +34,23 @@
 /*******************************************************************************
 **** Styling
 *******************************************************************************/
+.brand-primary {
+  color: #2e536b !important;
+}
+.brand-secondary {
+  color: #f89406 !important;
+}
 a {
-  color: #049cdb;
+  color: #2e536b;
 }
 a:hover {
-  color: #0378a9;
+  color: #1f3747;
+}
+a.brand-secondary {
+  color: #f89406;
+}
+a.brand-secondary:hover {
+  color: #c67605;
 }
 .navbar .nav > li > a,
 header.navbar .ui-navigation .nav > li > a {
@@ -52,13 +64,16 @@ header.navbar .ui-navigation .nav > li > a:hover {
 header.navbar .ui-navigation .nav > li.active > a,
 .navbar .nav > li.active > a:hover,
 header.navbar .ui-navigation .nav > li.active > a:hover {
-  color: #ffffff;
-  background-color: #049cdb;
+  color: #f89406;
+  background-color: none;
+}
+header.navbar .ui-navigation .nav {
+  margin-top: 12px;
 }
 .nav-tabs .open .dropdown-toggle,
 .nav-pills .open .dropdown-toggle,
 .nav > li.dropdown.open.active > a:hover {
-  color: #0378a9;
+  color: #1f3747;
 }
 .dropdown-menu {
   background-color: #ffffff;
@@ -67,5 +82,8 @@ header.navbar .ui-navigation .nav > li.active > a:hover {
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover {
   color: #ffffff;
-  background-color: #0378a9;
+  background-color: #1f3747;
+}
+[data-page] header {
+  color: #2e536b;
 }

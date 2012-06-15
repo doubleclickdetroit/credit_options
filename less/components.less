@@ -1,111 +1,201 @@
 /*******************************************************************************
-**** Content
+**** Base
 *******************************************************************************/
-[data-page] {
-	// #gradient > .radial(#fff, #eaeaea);
-	padding-top: @gridGutterWidth;
-
-	/***************************************************************************
-	**** Horizontal List
-	***************************************************************************/
-	.list-horizontal {
-		margin: @gridGutterWidth 0 0;
-
-		li {
-			display: inline-block;
-			.ie7-inline-block();
-
-			&:before { content: " | "; }
-			&:first-child:before { content: ""; }
-		}
-	}
-
-
-	/***************************************************************************
-	**** Link Group
-	***************************************************************************/
-	.ui-linkgroup {
-		.padding-sides();
-		.list-horizontal();
-
-		line-height: 35px;
-
-		li, li a { color: @white; }
-	}
-
-
-	/***************************************************************************
-	**** Panel
-	***************************************************************************/
-	.ui-panel {
-		header {
-			padding: 0 @gridGutterWidth;
-			line-height: 50px;
-			border-bottom: 1px solid #ebebeb;
-
-			h1, h2, h3, p {
-				margin: 0px;
-				line-height: inherit;
-				font-weight: normal;
-			}
-			h1, h2, h3 { font-size: 20px; }
-		}
-
-		// Table Styles
-		.table {
-			margin-bottom: 0;
-
-			tbody {
-				th, td {
-					border-top-style: dotted;
-				}
-
-				th { color: @grayDark; font-weight: normal; }
-				td { color: @grayLight; }
-
-				&:first-child tr:first-child {
-					th, td {
-						border-top: 0;
-					}
-				}
-			}
-		}
-	}
-
-	// Mixin: .ui-panel
-	.comp-panel() {
-		.border-radius(5px);
-		.box-shadow( 0 0 7px darken(@grayLighter, 15%) );
-		background-color: @white;
-	}
+html, body { height: 100%; }
+body {
+	@bg: #c3ddeb; //darken(@grayLighter, 3%);
 
 	// Tablet to Desktop
 	@media (min-width: 768px) {
-		.ui-panel {
-			// Render as one panel (as intended).
-			.comp-panel();
-		}
+		background-attachment: fixed !important;
+		#gradient > .directional(#fff 30%, @bg, 90deg);
 	}
 
 	// Mobile portrait & landscape
 	@media (max-width: 767px) {
-		.ui-panel {
-			// Render each ".span*" child as it's own panel.
-			> .row > [class*="span"] {
-				.margin-top();
-				.comp-panel();
+		background-color: @bg;
+	}
+}
+
+
+/*******************************************************************************
+**** Elements
+*******************************************************************************/
+hr {
+	border-top: 1px solid lighten(@grayLight, 25%);
+	border-bottom: none;
+}
+
+
+/*******************************************************************************
+**** Page
+*******************************************************************************/
+[data-page] {
+
+	// #gradient > .radial(#fff, #eaeaea);
+	padding-top: @gridGutterWidth;
+
+	// Mobile portrait & landscape
+	@media (max-width: 767px) {
+		padding-top: 0;
+	}
+}
+
+
+/***************************************************************************
+**** Horizontal List
+***************************************************************************/
+.list-horizontal {
+	.clearfix();
+	margin: 0;
+	list-style: none;
+
+	li {
+		float: left;
+	}
+
+	&.delimit li {
+		&:before { content: "|"; }
+		&:first-child:before { content: ""; }
+		a { padding: 0 5px; }
+	}
+}
+
+
+/***************************************************************************
+**** Link Group
+***************************************************************************/
+.ui-linkgroup {
+
+	.list-horizontal();
+	.gradientBar(@grayLighter, @white);
+
+	border-top: 1px solid darken(@grayLighter, 5%);
+
+	li {
+		border-left: 1px solid lighten(@grayLighter, 5%);
+
+		a {
+			display: block;
+			.padding-sides();
+			line-height: 35px;
+			border-right: 1px solid darken(@grayLighter, 5%);
+			.gradientBar(@white, @grayLighter);
+		}
+	}
+}
+
+
+/***************************************************************************
+**** Panel
+***************************************************************************/
+.ui-panel {
+	header {
+		padding: 0 @gridGutterWidth;
+		line-height: 50px;
+		border-bottom: 1px solid #ebebeb;
+
+		h1, h2, h3, p {
+			margin: 0px;
+			line-height: inherit;
+			font-weight: normal;
+		}
+		h1, h2, h3 { font-size: 20px; }
+	}
+
+	// Table Styles
+	.table {
+		margin-bottom: 0;
+
+		tbody {
+			th, td {
+				border-top-style: dotted;
 			}
 
-			header.text-right { text-align: left; }
+			th { color: @grayDark; font-weight: normal; }
+			td { color: @grayLight; }
+
+			&:first-child tr:first-child {
+				th, td {
+					border-top: 0;
+				}
+			}
+		}
+	}
+}
+
+// Mixin: .ui-panel
+.comp-panel() {
+	position: relative;
+	.border-radius(5px);
+	.box-shadow( 0 0 7px darken(@grayLighter, 15%) );
+	background-color: @white;
+}
+
+// Tablet to Desktop
+@media (min-width: 768px) {
+	.ui-panel {
+		// Render as one panel (as intended).
+		.comp-panel();
+	}
+}
+
+// Mobile portrait & landscape
+@media (max-width: 767px) {
+	.ui-panel {
+		// Render each ".span*" child as it's own panel.
+		> .row > [class*="span"] {
+			.margin-top();
+			.comp-panel();
+		}
+
+		header.text-right { text-align: left; }
+	}
+}
+
+
+/***************************************************************************
+**** Tiles
+***************************************************************************/
+.ui-tiles {
+	overflow: hidden;
+
+	// Mixin
+	.tile-gradient() {
+		#gradient > .vertical-three-colors( @white, @white, 35%, darken(@white, 5%) );
+	}
+
+	// UI Tile
+	.ui-tile { .clearfix(); }
+
+	// Vertical Layout
+	&.tiles-vertical {
+		.tile-gradient();
+		border-left: 1px solid darken(@grayLighter, 10%);
+
+		.ui-tile {
+			.padding-all();
+			border-top: 1px dotted darken(@grayLighter, 10%);
+			&:first-child { border-top-width: 0; }
 		}
 	}
 
+	// Horizontal Layout
+	&.tiles-horizontal {
+		.ui-tile {
+			.margin-bottom();
+			padding: 10px;
+			.tile-gradient();
+			border: 1px solid darken(@grayLighter, 10%);
 
-	/***************************************************************************
-	**** Tiles
-	***************************************************************************/
-	.ui-tiles {
+			img { max-height: 100px; }
+			img.pull-left  { margin-right: 10px; }
+			img.pull-right { margin-left : 10px; }
+		}
+	}
 
+	// UI Shadow ( Tablet & Desktop only )
+	@media (min-width: 768px) {
 		.drop-shadow {
 			position: relative;
 			float   : left;
@@ -144,21 +234,10 @@
 			}
 		}
 
-		overflow: hidden;
-		border-left: 1px solid darken(@grayLighter, 10%);
-		#gradient > .vertical-three-colors( @white, @white, 35%, darken(@white, 5%) );
-
-		> .ui-shadow {
+		.ui-shadow {
 			.drop-shadow();
 			.curved();
 			.curved-hz-1();
-		}
-
-		.ui-tile {
-			.padding-all();
-			border-top: 1px dotted darken(@grayLighter, 10%);
-
-			&:first-child { border-top-width: 0; }
 		}
 	}
 }

@@ -8,11 +8,14 @@
 /*******************************************************************************
 **** Variables :: Modify this for branding colors
 *******************************************************************************/
-@primaryColor  : @blue;
+@primaryColor  : #2e536b;
 @secondaryColor: @orange;
 
 @linkColor     : @primaryColor;
 @linkColorHover: darken(@linkColor, 10%);
+
+@linkSecondaryColor     : @secondaryColor;
+@linkSecondaryColorHover: darken(@secondaryColor, 10%);
 
 @btnPrimaryBackground         : @linkColor;
 @btnPrimaryBackgroundHighlight: spin(@btnPrimaryBackground, 15%);
@@ -27,18 +30,29 @@
 @dropdownLinkColorHover     : @white;
 @dropdownLinkBackgroundHover: @linkColorHover;
 
+@navMarginTop: 12px;
+
 
 /*******************************************************************************
 **** Styling
 *******************************************************************************/
+// Branded Text
+// ----------------------
+.brand-primary   { color: @primaryColor !important; }
+.brand-secondary { color: @secondaryColor !important; }
+
 // Links
+// ----------------------
 a {
 	color: @linkColor;
 	&:hover { color: @linkColorHover; }
+
+	&.brand-secondary       { color: @linkSecondaryColor; }
+	&.brand-secondary:hover { color: @linkSecondaryColorHover; }
 }
 
 // Navigation
-// Links
+// ----------------------
 .navbar .nav > li,
 header.navbar .ui-navigation .nav > li {
 	> a {
@@ -51,9 +65,13 @@ header.navbar .ui-navigation .nav > li {
 
 	&.active > a,
 	&.active > a:hover {
-		color: @white;
-		background-color: @linkColor;
+		color: @secondaryColor; //@white;
+		background-color: none; //@linkColor;
 	}
+}
+
+header.navbar .ui-navigation .nav {
+	margin-top: @navMarginTop;
 }
 
 // Open dropdowns
@@ -74,4 +92,12 @@ header.navbar .ui-navigation .nav > li {
 .dropdown-menu .active > a:hover {
 	color           : @dropdownLinkColorHover;
 	background-color: @dropdownLinkBackgroundHover;
+}
+
+// Content
+// ----------------------
+[data-page] {
+	header {
+		color: @primaryColor;
+	}
 }

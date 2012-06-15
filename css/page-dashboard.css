@@ -1,0 +1,164 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*******************************************************************************
+**** Helpers
+*******************************************************************************/
+.margin-top {
+  margin-top: 20px;
+}
+.margin-right {
+  margin-right: 20px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.margin-left {
+  margin-left: 20px;
+}
+.margin-sides {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.margin-tops {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.margin-all {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.padding-top {
+  padding-top: 20px;
+}
+.padding-right {
+  padding-right: 20px;
+}
+.padding-bottom {
+  padding-bottom: 20px;
+}
+.padding-left {
+  padding-left: 20px;
+}
+.padding-sides {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.padding-tops {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.padding-all {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.text-gray {
+  color: #555555 !important;
+}
+.text-gray_light {
+  color: #999999 !important;
+}
+.text-gray_lighter {
+  color: #eeeeee !important;
+}
+.text-gray_dark {
+  color: #333333 !important;
+}
+.text-gray_darker {
+  color: #222222 !important;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.layout-block {
+  display: block;
+}
+.layout-inline {
+  display: inline;
+}
+.layout-inlineblock {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+}
+@media (min-width: 768px) {
+  .ui-panel .ui-linkgroup {
+    position: absolute;
+    bottom: 0;
+  }
+}
+.ui-tiles a {
+  font-size: .9em;
+}
+.tile-messages p {
+  margin: 0;
+  line-height: normal;
+}
+.tile-messages p:first-child {
+  font-size: 1.1em;
+}
+.tile-messages a {
+  display: inline-block;
+  margin-top: 3px;
+}
+.tile-rewards .clearfix {
+  margin-bottom: 10px;
+}
+.tile-rewards .clearfix h3 {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  line-height: 40px;
+  font-size: 4em;
+  font-weight: 500;
+}
+.tile-rewards .clearfix small {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  line-height: normal;
+  text-transform: uppercase;
+}

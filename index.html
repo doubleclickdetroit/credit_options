@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="css/application.css">
     <link rel="stylesheet" href="css/brand.css">
 
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="css/page-dashboard.css">
+
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
@@ -62,7 +65,9 @@
         <nav class="ui-navigation">
             <div class="container">
                 <div class="drop-shadow curved curved-hz-1">
-                    <a href="#" class="brand">ACME Co.</a>
+                    <a href="#" class="brand">
+                        <img src="brand/acme/ui-logo.jpg" title="Acme Co.">
+                    </a>
 
                     <a class="visible-phone pull-right btn" data-toggle="collapse" data-target="#session-collapse">
                         <i class="icon-cog"></i>
@@ -135,13 +140,13 @@
         </nav>
     </header>
 
-    <div class="container" data-page="dashboard" style="height: 2000px;">
+    <div class="container" data-page="dashboard">
         <div class="row">
             <div class="span12 ui-panel">
                 <div class="row">
                     <div class="span8">
                         <header>
-                            <h2>Account Summary</h2>
+                            <h2>Account Overview</h2>
                         </header>
                         <div class="padding-sides">
                             <table class="table">
@@ -173,7 +178,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <ul class="ui-linkgroup">
+                        <ul class="ui-linkgroup span8">
                             <li><a href="#">View Activity</a></li>
                             <li><a href="#">View Statement</a></li>
                             <li><a href="#">Make a Payment</a></li>
@@ -181,19 +186,21 @@
                     </div>
                     <div class="span4 gutter-padded">
                         <div class="row">
-                            <header class="grayLight text-right">
-                                <p>Last Logged In On: 03/21/2012</p>
+                            <header class="text-uppercase text-gray_light text-right">
+                                <p><small>Last Logged In On: 03/21/2012</small></p>
                             </header>
                         </div>
-                        <div class="row ui-tiles">
+                        <div class="row ui-tiles tiles-vertical">
                             <div class="ui-shadow">
-                                <div class="ui-tile">
+                                <div class="ui-tile tile-messages">
                                     <p>Message Notification</p>
-                                    <p class="lead">You have 5 unread messages</p>
+                                    <p class="lead brand-secondary">You have 5 unread messages</p>
                                     <a href="#">View My Messages</a>
                                 </div>
-                                <div class="ui-tile">
-                                    <h3>9,999<small>Your Earned Rewards Points</small></h3>
+                                <div class="ui-tile tile-rewards">
+                                    <div class="clearfix">
+                                        <h3 class="brand-primary">9,999 <small class="brand-secondary">Your Earned<br>Rewards Points</small></h3>
+                                    </div>
                                     <a href="#">Redeem My Rewards</a>
                                 </div>
                             </div>
@@ -203,6 +210,59 @@
             </div>
         </div>
     </div>
+
+    <div class="container margin-top">
+        <div class="row ui-tiles tiles-horizontal">
+            <div class="span4">
+                <div class="ui-tile">
+                    <img src="img/marketing/tile1.jpg" alt="" class="pull-right">
+                    <h3>Mobile App</h3>
+                    <p>
+                        <span class="brand-secondary">Check gass prices anywhere</span>
+                        <br>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                    </p>
+                    <a href="#">Download now</a>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="ui-tile">
+                    <img src="img/marketing/tile2.png" alt="" class="pull-right">
+                    <h3>Wright Rewards</h3>
+                    <p>
+                        <span class="brand-secondary">Earn points with every transaction</span>
+                        <br>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="ui-tile">
+                    <img src="img/marketing/tile3.png" alt="" class="pull-right">
+                    <h3>Prepaid Card</h3>
+                    <p>
+                        <span class="brand-secondary">Set your own spending limit</span>
+                        <br>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container clearfix text-uppercase">
+            <hr>
+            <p class="pull-left text-gray_light">&copy; 2012 Wright Express Corporation. All Rights Reserved.</p>
+            <ul class="pull-right brand-secondary list-horizontal delimit">
+                <li><a href="#" class="brand-secondary">Home</a></li>
+                <li><a href="#" class="brand-secondary">Contact Us</a></li>
+                <li><a href="#" class="brand-secondary">Terms &amp; Policies</a></li>
+            </ul>
+        </div>
+    </footer>
 
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
