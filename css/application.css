@@ -5245,20 +5245,24 @@ hr {
 .ui-panel .table {
   margin-bottom: 0;
 }
-.ui-panel .table tbody th,
-.ui-panel .table tbody td {
+.ui-panel .table tbody tr th,
+.ui-panel .table tbody tr td {
   border-top-style: dotted;
 }
-.ui-panel .table tbody th {
+.ui-panel .table tbody tr th {
   color: #333333;
   font-weight: normal;
 }
-.ui-panel .table tbody td {
+.ui-panel .table tbody tr td {
   color: #999999;
 }
 .ui-panel .table tbody:first-child tr:first-child th,
 .ui-panel .table tbody:first-child tr:first-child td {
   border-top: 0;
+}
+.ui-panel .table:not(.hoverable) tr th,
+.ui-panel .table:not(.hoverable) tr td {
+  background-color: transparent;
 }
 @media (min-width: 768px) {
   .ui-panel {

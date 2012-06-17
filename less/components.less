@@ -113,17 +113,22 @@ hr {
 		margin-bottom: 0;
 
 		tbody {
-			th, td {
-				border-top-style: dotted;
+			tr {
+				th, td { border-top-style: dotted; }
+				th { color: @grayDark; font-weight: normal; }
+				td { color: @grayLight; }
 			}
-
-			th { color: @grayDark; font-weight: normal; }
-			td { color: @grayLight; }
 
 			&:first-child tr:first-child {
 				th, td {
 					border-top: 0;
 				}
+			}
+		}
+
+		&:not(.hoverable) {
+			tr {
+				th, td { background-color: transparent; }
 			}
 		}
 	}
