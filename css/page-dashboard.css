@@ -120,6 +120,11 @@
 
   *zoom: 1;
 }
+@media (max-width: 767px) {
+  .pull-right.pull-fallback {
+    float: left;
+  }
+}
 @media (min-width: 768px) {
   .ui-panel .ui-linkgroup {
     position: absolute;
