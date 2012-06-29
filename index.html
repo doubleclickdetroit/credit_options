@@ -16,11 +16,20 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 
+    <!-- Begin: Apple Devices -->
+    <!-- The following will work once the app has been saved to the homescreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black translucent">
+    <!-- End: Apple Devices -->
+
+    <link rel="shortcut icon" href="img/app-icon.png">
+    <link rel="apple-touch-icon" href="img/app-icon.png">
+
     <link rel="stylesheet" href="css/application.css">
     <link rel="stylesheet" href="css/brand.css">
 
     <!-- Page Styles -->
-    <link rel="stylesheet" href="css/page-dashboard.css">
+    <link rel="stylesheet" href="css/page-login.css">
 
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
@@ -29,240 +38,58 @@
 </head>
 <body>
 
-    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-         chromium.org/developers/how-tos/chrome-frame-getting-started -->
-    <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
     <header class="navbar">
-        <nav class="ui-session navbar-inner hidden-phone">
-            <div class="container">
-                <ul class="nav pull-right">
-                    <li class="divider-vertical"></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-briefcase icon-white"></i>ACME Corp | 000000000<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Change Account</a></li>
-                        </ul>
-                    </li>
-                    <li class="divider-vertical"></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user icon-white"></i>User12345<b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Preferences</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Signout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
         <nav class="ui-navigation">
             <div class="container">
                 <div class="drop-shadow curved curved-hz-1">
-                    <a href="#" class="brand">
+                    <a href="/" class="brand">
                         <img src="brand/acme/ui-logo.jpg" title="Acme Co.">
                     </a>
-
-                    <a class="visible-phone pull-right btn" data-toggle="collapse" data-target="#session-collapse">
-                        <i class="icon-cog"></i>
-                    </a>
-
-                    <a class="pull-right btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-
-                    <div id="nav-collapse" class="nav-collapse">
-                        <ul class="nav nav-pills pull-right">
-                            <li class="active">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Activity<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Make Payment<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rewards<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Services<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="session-collapse" class="nav-collapse visible-phone">
-                        <ul class="nav nav-pills">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="icon-briefcase"></i>ACME Corp | 000000000<b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Change Account</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="icon-user"></i>User12345<b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Profile</a></li>
-                                    <li><a href="#">Preferences</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Signout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container" data-page="dashboard">
-        <div class="row">
-            <div class="span12 ui-panel">
-                <div class="row">
-                    <div class="span8">
-                        <header>
-                            <h2>Account Overview</h2>
-                        </header>
-                        <div class="padding-sides">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th>Account Number:</th>
-                                        <td>0000000000000</td>
-                                        <th>Statement Date:</th>
-                                        <td>05/28/2012</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Current Balance:</th>
-                                        <td>$1,365.00</td>
-                                        <th>Statement Balance:</th>
-                                        <td>$1,200.00</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Min. Balance Due:</th>
-                                        <td>$300.00</td>
-                                        <th>Payment Due Date:</th>
-                                        <td>06/05/2012</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Avail Credit</th>
-                                        <td>$8,635.00</td>
-                                        <th>Credit Limit:</th>
-                                        <td>$10,000.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+    <div class="container" data-page="login">
+        <div class="ui-panel">
+            <header>
+                <h1>Login Information</h1>
+            </header>
+            <form action="dashboard.html" class="form-horizontal">
+                <fieldset class="padding-all">
+                    <div class="control-group">
+                        <label for="field-username" class="control-label">Username:</label>
+                        <div class="controls">
+                            <input type="text" name="field-username">
                         </div>
-                        <ul class="ui-linkgroup span8">
-                            <li><a href="#">View Activity</a></li>
-                            <li><a href="#">View Statement</a></li>
-                            <li><a href="#">Make a Payment</a></li>
-                        </ul>
                     </div>
-                    <div class="span4 gutter-padded">
-                        <div class="row">
-                            <header class="text-uppercase text-gray_light text-right">
-                                <p><small>Last Logged In On: 03/21/2012</small></p>
-                            </header>
+                    <div class="control-group">
+                        <label for="field-password" class="control-label">Password:</label>
+                        <div class="controls">
+                            <input type="password" name="field-password">
                         </div>
-                        <div class="row ui-tiles tiles-vertical">
-                            <div class="ui-shadow">
-                                <div class="ui-tile tile-messages">
-                                    <p>Message Notification</p>
-                                    <p class="lead brand-secondary">You have 5 unread messages</p>
-                                    <a href="#">View My Messages</a>
+                    </div>
+                </fieldset>
+                <div class="form-actions padding-sides">
+                    <button class="btn btn-small" type="button" data-toggle="collapse" data-target="#forgot-pwd"><i class="icon-user"></i> Forgot Password</button>
+                    <button class="btn btn-large btn-primary pull-right" type="submit">Login</button>
+                    <div id="forgot-pwd" class="collapse clearfix margin-top">
+                        <hr>
+                        <div class="control-group">
+                            <label class="control-label" for="prependedInput">Username:</label>
+                            <div class="controls">
+                                <div class="input-append">
+                                    <input id="appendedInputButton" type="text" size="16">
+                                    <button type="button" class="btn btn-primary btn-small">Submit</button>
                                 </div>
-                                <div class="ui-tile tile-rewards">
-                                    <div class="clearfix">
-                                        <h3 class="brand-primary">9,999 <small class="brand-secondary">Your Earned<br>Rewards Points</small></h3>
-                                    </div>
-                                    <a href="#">Redeem My Rewards</a>
-                                </div>
+                                <p class="help-block">Retreive instructions to reset password.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-
-    <div class="container margin-top">
-        <div class="row ui-tiles tiles-horizontal">
-            <div class="span4">
-                <div class="ui-tile">
-                    <img src="img/marketing/tile1.jpg" alt="" class="pull-right">
-                    <h3>Mobile App</h3>
-                    <p>
-                        <span class="brand-secondary">Check gass prices anywhere</span>
-                        <br>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
-                    </p>
-                    <a href="#">Download now</a>
-                </div>
-            </div>
-            <div class="span4">
-                <div class="ui-tile">
-                    <img src="img/marketing/tile2.png" alt="" class="pull-right">
-                    <h3>Wright Rewards</h3>
-                    <p>
-                        <span class="brand-secondary">Earn points with every transaction</span>
-                        <br>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                    </p>
-                    <a href="#">Learn more</a>
-                </div>
-            </div>
-            <div class="span4">
-                <div class="ui-tile">
-                    <img src="img/marketing/tile3.png" alt="" class="pull-right">
-                    <h3>Prepaid Card</h3>
-                    <p>
-                        <span class="brand-secondary">Set your own spending limit</span>
-                        <br>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                    </p>
-                    <a href="#">Learn more</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container clearfix text-uppercase">
-            <hr>
-            <p class="pull-left text-gray_light">&copy; 2012 Wright Express Corporation. All Rights Reserved.</p>
-            <ul class="pull-right pull-fallback brand-secondary list-horizontal delimit">
-                <li><a href="#" class="brand-secondary">Home</a></li>
-                <li><a href="#" class="brand-secondary">Contact Us</a></li>
-                <li><a href="#" class="brand-secondary">Terms &amp; Policies</a></li>
-            </ul>
-        </div>
-    </footer>
 
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
@@ -275,6 +102,17 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <!-- end scripts -->
+
+    <script>
+    (function() {
+        var $submit = $('form :submit');
+        $('#forgot-pwd').on('show hide', function(evt) {
+            $submit
+                .attr('disabled', evt.type == 'show')
+                [evt.type == 'show' ? 'addClass' : 'removeClass']('disabled');
+        });
+    }());
+    </script>
 
 </body>
 </html>

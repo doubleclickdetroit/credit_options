@@ -140,45 +140,11 @@
     clear: left;
   }
 }
+.ui-panel {
+  margin: 0 auto;
+}
 @media (min-width: 768px) {
-  .ui-panel .ui-linkgroup {
-    position: absolute;
-    bottom: 0;
+  .ui-panel {
+    max-width: 550px;
   }
-}
-.ui-tiles a {
-  font-size: .9em;
-}
-.tile-messages p {
-  margin: 0;
-  line-height: normal;
-}
-.tile-messages p:first-child {
-  font-size: 1.1em;
-}
-.tile-messages a {
-  display: inline-block;
-  margin-top: 3px;
-}
-.tile-rewards .clearfix {
-  margin-bottom: 10px;
-}
-.tile-rewards .clearfix h3 {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-
-  *zoom: 1;
-  line-height: 40px;
-  font-size: 4em;
-  font-weight: 500;
-}
-.tile-rewards .clearfix small {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-
-  *zoom: 1;
-  line-height: normal;
-  text-transform: uppercase;
 }

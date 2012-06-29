@@ -3,7 +3,7 @@
 *******************************************************************************/
 header.navbar {
 	z-index: 1;
-	margin-bottom: 0;
+	// margin-bottom: 0;
 
 	@link-spacing: 10px;
 
@@ -26,25 +26,31 @@ header.navbar {
 		outline    : none;
 		text-shadow: none;
 
-		> i {
+		& > i {
 			.opacity(80);
 			margin-right: @link-spacing;
 		}
 
-		> b {
+		& > b {
 			.opacity(80);
 			margin-left: @link-spacing;
 		}
 	}
 
-	.ui-session .nav > li > a {
-		padding: auto @link-spacing;
-		color  : white;
-		.opacity(80);
-		.transition(all .3s ease-in);
+	.ui-session {
 
-		&:hover {
-			.opacity(100);
+		.container-fluid {
+			padding-left : 0;
+			padding-right: 0;
+		}
+
+		.nav > li > a {
+			padding: auto @link-spacing;
+			color  : white;
+			.opacity(80);
+			.transition(all .3s ease-in);
+
+			&:hover { .opacity(100); }
 		}
 	}
 

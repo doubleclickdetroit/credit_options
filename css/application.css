@@ -4545,6 +4545,22 @@ a.badge:hover {
   input.span1, textarea.span1, .uneditable-input.span1 {
     width: 32px;
   }
+  .form-horizontal .control-group > label {
+    float: none;
+    width: auto;
+    padding-top: 0;
+    text-align: left;
+  }
+  .form-horizontal .controls {
+    margin-left: 0;
+  }
+  .form-horizontal .control-list {
+    padding-top: 0;
+  }
+  .form-horizontal .form-actions {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 @media (min-width: 1200px) {
   .row {
@@ -4905,56 +4921,64 @@ a.badge:hover {
 **** Helpers
 *******************************************************************************/
 .margin-top {
-  margin-top: 20px;
+  margin-top: 20px !important;
 }
 .margin-right {
-  margin-right: 20px;
+  margin-right: 20px !important;
 }
 .margin-bottom {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 .margin-left {
-  margin-left: 20px;
+  margin-left: 20px !important;
 }
 .margin-sides {
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
 }
 .margin-tops {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
 .margin-all {
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
 .padding-top {
-  padding-top: 20px;
+  padding-top: 20px !important;
 }
 .padding-right {
-  padding-right: 20px;
+  padding-right: 20px !important;
 }
 .padding-bottom {
-  padding-bottom: 20px;
+  padding-bottom: 20px !important;
 }
 .padding-left {
-  padding-left: 20px;
+  padding-left: 20px !important;
 }
 .padding-sides {
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
 }
 .padding-tops {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 .padding-all {
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+.text-red,
+.text-error {
+  color: #b94a48 !important;
+}
+.text-green,
+.text-success {
+  color: #468847 !important;
 }
 .text-gray {
   color: #555555 !important;
@@ -4974,6 +4998,9 @@ a.badge:hover {
 .text-uppercase {
   text-transform: uppercase;
 }
+.text-normal {
+  font-weight: normal;
+}
 .text-left {
   text-align: left;
 }
@@ -4982,6 +5009,9 @@ a.badge:hover {
 }
 .text-right {
   text-align: right;
+}
+.layout-clear {
+  clear: both;
 }
 .layout-block {
   display: block;
@@ -4999,6 +5029,7 @@ a.badge:hover {
 @media (max-width: 767px) {
   .pull-right.pull-fallback {
     float: left;
+    clear: left;
   }
 }
 /*******************************************************************************
@@ -5006,7 +5037,6 @@ a.badge:hover {
 *******************************************************************************/
 header.navbar {
   z-index: 1;
-  margin-bottom: 0;
 }
 header.navbar:not(.navbar-fixed-top) {
   position: relative;
@@ -5026,15 +5056,19 @@ header.navbar .nav > li > a {
   outline: none;
   text-shadow: none;
 }
-header.navbar .nav > li > a > i {
+header.navbar .nav > li > a  > i {
   opacity: 0.8;
   filter: alpha(opacity=80);
   margin-right: 10px;
 }
-header.navbar .nav > li > a > b {
+header.navbar .nav > li > a  > b {
   opacity: 0.8;
   filter: alpha(opacity=80);
   margin-left: 10px;
+}
+header.navbar .ui-session .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 header.navbar .ui-session .nav > li > a {
   padding: auto 10px;
@@ -5117,11 +5151,14 @@ hr {
   border-top: 1px solid #d9d9d9;
   border-bottom: none;
 }
+.btn:focus {
+  outline: none;
+}
 /*******************************************************************************
 **** Page
 *******************************************************************************/
 [data-page] {
-  padding-top: 20px;
+  padding-top: 20px !important;
 }
 @media (min-width: 768px) {
   [data-page] {
@@ -5136,6 +5173,38 @@ hr {
   [data-page] {
     padding-top: 0;
   }
+}
+[data-page] header {
+  line-height: 50px;
+  border-bottom: 1px solid #eeeeee;
+}
+[data-page] header h1,
+[data-page] header h2,
+[data-page] header h3,
+[data-page] header p {
+  margin: 0 20px 0 0;
+  padding-left: 20px;
+  line-height: inherit;
+  font-weight: normal;
+}
+[data-page] header h1,
+[data-page] header h2,
+[data-page] header h3 {
+  font-size: 20px;
+}
+[data-page] header .breadcrumb {
+  margin: 8px 8px 8px 0;
+  line-height: normal;
+  border: none;
+  background: none;
+}
+[data-page] header nav.subnav {
+  clear: both;
+  padding: 8px 0 0 20px;
+  border-top: 1px solid #eeeeee;
+}
+[data-page] header nav.subnav ul.nav {
+  margin-bottom: 8px;
 }
 /***************************************************************************
 **** Horizontal List
@@ -5153,17 +5222,19 @@ hr {
 .list-horizontal:after {
   clear: both;
 }
-.list-horizontal li {
-  float: left;
-}
-.list-horizontal.delimit li:before {
-  content: "|";
-}
-.list-horizontal.delimit li:first-child:before {
-  content: "";
-}
-.list-horizontal.delimit li a {
-  padding: 0 5px;
+@media (min-width: 768px) {
+  .list-horizontal li {
+    float: left;
+  }
+  .list-horizontal.delimit li:before {
+    content: "|";
+  }
+  .list-horizontal.delimit li:first-child:before {
+    content: "";
+  }
+  .list-horizontal.delimit li a {
+    padding: 0 5px;
+  }
 }
 /***************************************************************************
 **** Link Group
@@ -5193,25 +5264,27 @@ hr {
 .ui-linkgroup:after {
   clear: both;
 }
-.ui-linkgroup li {
-  float: left;
-}
-.ui-linkgroup.delimit li:before {
-  content: "|";
-}
-.ui-linkgroup.delimit li:first-child:before {
-  content: "";
-}
-.ui-linkgroup.delimit li a {
-  padding: 0 5px;
+@media (min-width: 768px) {
+  .ui-linkgroup li {
+    float: left;
+  }
+  .ui-linkgroup.delimit li:before {
+    content: "|";
+  }
+  .ui-linkgroup.delimit li:first-child:before {
+    content: "";
+  }
+  .ui-linkgroup.delimit li a {
+    padding: 0 5px;
+  }
 }
 .ui-linkgroup li {
   border-left: 1px solid #fbfbfb;
 }
 .ui-linkgroup li a {
   display: block;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
   line-height: 35px;
   border-right: 1px solid #e1e1e1;
   background-color: #f8f8f8;
@@ -5227,28 +5300,51 @@ hr {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 /***************************************************************************
+**** Modules
+***************************************************************************/
+[data-module=pagination] {
+  *zoom: 1;
+  margin-bottom: 20px !important;
+}
+[data-module=pagination]:before,
+[data-module=pagination]:after {
+  display: table;
+  content: "";
+}
+[data-module=pagination]:after {
+  clear: both;
+}
+[data-module=pagination] .btn-group {
+  float: right;
+  margin-top: 3px;
+}
+@media (max-width: 767px) {
+  [data-module=pagination] .btn-group {
+    float: left;
+    clear: left;
+  }
+}
+@media (max-width: 767px) {
+  [data-module=pagination] .btn-group {
+    margin-bottom: 20px !important;
+  }
+}
+[data-module=pagination] .btn-group  + .pagination {
+  float: right;
+  margin: 0 20px 0 0;
+}
+@media (max-width: 767px) {
+  [data-module=pagination] .btn-group  + .pagination {
+    float: left;
+    clear: left;
+  }
+}
+/***************************************************************************
 **** Panel
 ***************************************************************************/
-.ui-panel header {
-  padding: 0 20px;
-  line-height: 50px;
-  border-bottom: 1px solid #ebebeb;
-}
-.ui-panel header h1,
-.ui-panel header h2,
-.ui-panel header h3,
-.ui-panel header p {
-  margin: 0px;
-  line-height: inherit;
-  font-weight: normal;
-}
-.ui-panel header h1,
-.ui-panel header h2,
-.ui-panel header h3 {
-  font-size: 20px;
-}
 .ui-panel .table {
   margin-bottom: 0;
+  background-color: #ffffff;
 }
 .ui-panel .table tbody tr th,
 .ui-panel .table tbody tr td {
@@ -5265,9 +5361,13 @@ hr {
 .ui-panel .table tbody:first-child tr:first-child td {
   border-top: 0;
 }
-.ui-panel .table:not(.hoverable) tr th,
-.ui-panel .table:not(.hoverable) tr td {
+.ui-panel .table:not(.table-hoverable) tbody tr:hover th,
+.ui-panel .table:not(.table-hoverable) tbody tr:hover td {
   background-color: transparent;
+}
+.ui-panel .table:not(.table-hoverable).table-striped tbody tr:nth-child(odd) td,
+.ui-panel .table:not(.table-hoverable).table-striped tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
 }
 @media (min-width: 768px) {
   .ui-panel {
@@ -5282,19 +5382,29 @@ hr {
   }
 }
 @media (max-width: 767px) {
-  .ui-panel > .row > [class*="span"] {
-    margin-top: 20px;
+  .ui-panel header.text-right {
+    text-align: left;
+  }
+  .ui-panel:not(.panel-stackable) {
     position: relative;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
     -webkit-box-shadow: 0 0 7px #c8c8c8;
     -moz-box-shadow: 0 0 7px #c8c8c8;
     box-shadow: 0 0 7px #c8c8c8;
     background-color: #ffffff;
   }
-  .ui-panel header.text-right {
-    text-align: left;
+  .ui-panel.panel-stackable > .row > [class*="span"] {
+    margin-bottom: 20px !important;
+    position: relative;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0 0 7px #c8c8c8;
+    -moz-box-shadow: 0 0 7px #c8c8c8;
+    box-shadow: 0 0 7px #c8c8c8;
+    background-color: #ffffff;
   }
 }
 /***************************************************************************
@@ -5327,17 +5437,17 @@ hr {
   border-left: 1px solid #d5d5d5;
 }
 .ui-tiles.tiles-vertical .ui-tile {
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
   border-top: 1px dotted #d5d5d5;
 }
 .ui-tiles.tiles-vertical .ui-tile:first-child {
   border-top-width: 0;
 }
 .ui-tiles.tiles-horizontal .ui-tile {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
   padding: 10px;
   background-color: #fcfcfc;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(35%, #ffffff), to(#f2f2f2));

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en">        <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en">               <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en">                  <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+         More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title></title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="css/application.css">
+    <link rel="stylesheet" href="css/brand.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="css/page-dashboard.css">
+
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- All JavaScript at the bottom, except this Modernizr build. -->
+    <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+
+    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+         chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    <header class="navbar">
+        <nav class="ui-session navbar-inner hidden-phone">
+            <div class="container">
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-briefcase icon-white"></i>ACME Corp | 000000000<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Change Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user icon-white"></i>User12345<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Preferences</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/">Signout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="ui-navigation">
+            <div class="container">
+                <div class="drop-shadow curved curved-hz-1">
+                    <a href="dashboard.html" class="brand">
+                        <img src="brand/acme/ui-logo.jpg" title="Acme Co.">
+                    </a>
+
+                    <a class="visible-phone pull-right btn" data-toggle="collapse" data-target="#session-collapse">
+                        <i class="icon-cog"></i>
+                    </a>
+
+                    <a class="pull-right btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <div id="nav-collapse" class="nav-collapse">
+                        <ul class="nav nav-pills pull-right">
+                            <li>
+                                <a href="dashboard.html">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Activity<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="users.html">Manage Users</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Make Payment<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rewards<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Services<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="session-collapse" class="nav-collapse visible-phone">
+                        <ul class="nav nav-pills">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-briefcase"></i>ACME Corp | 000000000<b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Change Account</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-user"></i>User12345<b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Preferences</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/">Signout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" data-page="users">
+        <div class="ui-panel">
+
+            <header class="clearfix">
+                <h2 class="pull-left">Manage Users</h2>
+
+                <!-- Breadcrumb :: Hidden Phone -->
+                <nav class="pull-right hidden-phone">
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="brand-secondary">Account Activity</a> <span class="divider">/</span></li>
+                        <li class="active">Manage Users</li>
+                    </ul>
+                </nav>
+
+                <!-- Subnav :: Hidden Phone -->
+                <nav class="subnav hidden-phone">
+                    <ul class="nav nav-pills pull-left">
+                        <li class="active"><a href="#search" data-toggle="pill">Search</a></li>
+                        <li><a href="#results" data-toggle="pill">Results</a></li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary pull-right margin-right visible-desktop" data-fullscreen><i class="icon-white icon-resize-full"></i></a>
+                </nav>
+
+                <!-- Subnav :: Visible Phone -->
+                <div class="visible-phone pull-right margin-right">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target="#subnav-collapse">
+                        <i class="icon-bookmark"></i> Sections
+                    </a>
+
+                    <div id="subnav-collapse" class="nav-collapse">
+                        <ul class="nav nav-pills pull-right">
+                            <li class="active"><a href="#search" data-toggle="pill">Search</a></li>
+                            <li><a href="#results" data-toggle="pill">Results</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="pill-content">
+
+                <!-- Pane :: Search -->
+                <div id="search" class="pill-pane activea">
+
+                    <div class="well margin-all">
+                        <h3>Search</h3>
+                        <p>You may filter the list of users by providing any of the information below. All results will contain any of the values entered. Account number must match.</p>
+                    </div>
+
+                    <form action="#" class="form-horizontal">
+
+                        <!-- Search :: User Information -->
+                        <div class="row">
+                            <div class="span6 ui-panela margin-bottom">
+                                <fieldset class="padding-sides">
+                                    <legend>User Information</legend>
+                                    <div class="control-group">
+                                        <label class="control-label" for="">Last Name:</label>
+                                        <div class="controls"><input type="text"></div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="">First Name:</label>
+                                        <div class="controls"><input type="text"></div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="">Username:</label>
+                                        <div class="controls"><input type="text"></div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="">User Email Address:</label>
+                                        <div class="controls"><input type="text"></div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="">Phone:</label>
+                                        <div class="controls"><input type="text"></div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="" class="control-label">User Status:</label>
+                                        <div class="controls">
+                                            <select name="" id="">
+                                                <option value="">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="" class="control-label">Role:</label>
+                                        <div class="controls">
+                                            <select name="" id="">
+                                                <option value="">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- Search :: Account Information -->
+                            <div class="span6 ui-panela margin-bottom">
+                                <fieldset class="padding-sides">
+                                    <legend>Account Information</legend>
+                                    <div class="control-group">
+                                        <label class="control-label" for="">Account Number:</label>
+                                        <div class="controls"><input type="text"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="form-actions padding-sides">
+                            <button type="submit" class="btn btn-primary btn-large pull-right">Search</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Pane :: Results -->
+                <div id="results" class="pill-pane active">
+                    <div class="well margin-all">
+                        <h3>Results</h3>
+                        <p>You may filter the list of users below by clicking on the Search tab. To view a user's profile, click on their last name. Click on the corresponding Action link to manage any user's information.</p>
+                    </div>
+
+                    <div class="padding-sides padding-bottom">
+
+                        <div data-module="pagination">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+                                    10 Results
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">10 Results</a></li>
+                                    <li><a href="#">25 Results</a></li>
+                                    <li><a href="#">50 Results</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="pagination">
+                                <ul>
+                                    <li><a href="#" class="lead">«</a></li>
+                                    <li class="active"><a href="#">10</a></li>
+                                    <li class="disabled"><a href="#">1-10 of 50</a></li>
+                                    <li><a href="#">20</a></li>
+                                    <li><a href="#" class="lead">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Last Name</th>
+                                    <th>First Name</th>
+                                    <th>Username</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Last Login</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#">Babics</a></td>
+                                    <td>Ben</td>
+                                    <td>babicsfleet</td>
+                                    <td>Fleet Manager</td>
+                                    <td class="text-green">Active</td>
+                                    <td>05/14/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Dilios</a></td>
+                                    <td>Chris</td>
+                                    <td>cdilios</td>
+                                    <td>Fleet Manager</td>
+                                    <td class="text-green">Active</td>
+                                    <td>12/26/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Inman</a></td>
+                                    <td>Chris</td>
+                                    <td>cinman</td>
+                                    <td>Fleet Manager</td>
+                                    <td class="text-green">Active</td>
+                                    <td>09/10/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Thurgood</a></td>
+                                    <td>Eric</td>
+                                    <td>ethurgood</td>
+                                    <td>Fleet User</td>
+                                    <td class="text-green">Active</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">My User Preferences</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Fleet</a></td>
+                                    <td>User</td>
+                                    <td>testfleet123</td>
+                                    <td>Fleet User</td>
+                                    <td>Terminated</td>
+                                    <td></td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Johns</a></td>
+                                    <td>Dave</td>
+                                    <td>djohnsfleet</td>
+                                    <td>Fleet Manager</td>
+                                    <td class="text-green">Active</td>
+                                    <td>05/02/11</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Doe</a></td>
+                                    <td>John</td>
+                                    <td>johndoe</td>
+                                    <td>Fleet Manager</td>
+                                    <td class="text-green">Active</td>
+                                    <td>01/01/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Boucher</a></td>
+                                    <td>Libby</td>
+                                    <td>johndoe</td>
+                                    <td>Fleet Manager</td>
+                                    <td class="text-green">Active</td>
+                                    <td>08/18/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Martin</a></td>
+                                    <td>Glen</td>
+                                    <td>gmartinuser</td>
+                                    <td>Fleet User</td>
+                                    <td class="text-green">Active</td>
+                                    <td>03/16/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Beck</a></td>
+                                    <td>Noah</td>
+                                    <td>sbeckuser</td>
+                                    <td>Fleet User</td>
+                                    <td class="text-green">Active</td>
+                                    <td>07/23/2011</td>
+                                    <td>
+                                        <ul class="list-horizontal delimit">
+                                            <li><a href="#">Edit</a></li>
+                                            <li><a href="#">Reset Password</a></li>
+                                            <li><a href="#">Change Status</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <!-- scripts concatenated and minified via build script -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- end scripts -->
+
+    <script>
+    (function() {
+        var $containers = $('.navbar > nav > .container, [data-page]');
+        $('[data-fullscreen]').on('click', function() {
+            $containers
+                .toggleClass('container')
+                .toggleClass('container-fluid');
+
+            $('i', this)
+                .toggleClass('icon-resize-full')
+                .toggleClass('icon-resize-small');
+        });
+
+        $('form').submit(function(evt) {
+            evt.preventDefault();
+            $('a[href=#results]').trigger('click');
+        })
+    }());
+    </script>
+
+</body>
+</html>

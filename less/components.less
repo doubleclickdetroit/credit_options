@@ -26,6 +26,8 @@ hr {
 	border-bottom: none;
 }
 
+.btn:focus { outline: none; }
+
 
 /*******************************************************************************
 **** Page
@@ -33,7 +35,7 @@ hr {
 [data-page] {
 
 	// #gradient > .radial(#fff, #eaeaea);
-	padding-top: @gridGutterWidth;
+	.padding-top();
 
 	// Tablet to Desktop
 	@media (min-width: 768px) {
@@ -44,7 +46,40 @@ hr {
 	@media (max-width: 767px) {
 		padding-top: 0;
 	}
+
+	header {
+		// .padding-left();
+		line-height: 50px;
+		border-bottom: 1px solid @grayLighter;
+
+		h1, h2, h3, p {
+			margin: 0 @gridGutterWidth 0 0;
+			padding-left: @gridGutterWidth;
+			line-height: inherit;
+			font-weight: normal;
+		}
+		h1, h2, h3 { font-size: 20px; }
+
+		// Breadcrumb
+		.breadcrumb {
+			margin: 8px 8px 8px 0;
+			line-height: normal;
+			border: none;
+			background: none;
+		}
+
+		// Subnav
+		nav.subnav {
+			.layout-clear();
+			padding: 8px 0 0 @gridGutterWidth;
+			border-top: 1px solid @grayLighter;
+
+			ul.nav { margin-bottom: 8px; }
+		}
+	}
+
 }
+
 
 
 /***************************************************************************
@@ -53,16 +88,18 @@ hr {
 .list-horizontal {
 	.clearfix();
 	margin: 0;
+
 	list-style: none;
 
-	li {
-		float: left;
-	}
+	@media (min-width: 768px) {
 
-	&.delimit li {
-		&:before { content: "|"; }
-		&:first-child:before { content: ""; }
-		a { padding: 0 5px; }
+		li { float: left; }
+
+		&.delimit li {
+			&:before { content: "|"; }
+			&:first-child:before { content: ""; }
+			a { padding: 0 5px; }
+		}
 	}
 }
 
@@ -92,25 +129,39 @@ hr {
 
 
 /***************************************************************************
+**** Modules
+***************************************************************************/
+[data-module=pagination] {
+
+	.clearfix();
+	.margin-bottom();
+
+	.btn-group {
+		.pull-right();
+		.pull-right.pull-fallback();
+		margin-top: 3px;
+
+		@media (max-width: 767px) { .margin-bottom(); }
+
+		// Pagination list
+		& + .pagination {
+			.pull-right();
+			.pull-right.pull-fallback();
+			margin: 0 @gridGutterWidth 0 0;
+		}
+	}
+}
+
+
+/***************************************************************************
 **** Panel
 ***************************************************************************/
 .ui-panel {
-	header {
-		padding: 0 @gridGutterWidth;
-		line-height: 50px;
-		border-bottom: 1px solid #ebebeb;
 
-		h1, h2, h3, p {
-			margin: 0px;
-			line-height: inherit;
-			font-weight: normal;
-		}
-		h1, h2, h3 { font-size: 20px; }
-	}
-
-	// Table Styles
+	// Tables
 	.table {
 		margin-bottom: 0;
+		background-color: @white;
 
 		tbody {
 			tr {
@@ -126,18 +177,25 @@ hr {
 			}
 		}
 
-		&:not(.hoverable) {
-			tr {
+		&:not(.table-hoverable) {
+			tbody tr:hover {
 				th, td { background-color: transparent; }
+			}
+
+			&.table-striped tbody {
+				tr:nth-child(odd) td,
+				tr:nth-child(odd) th {
+					background-color: @tableBackgroundAccent;
+				}
 			}
 		}
 	}
 }
 
 // Mixin: .ui-panel
-.comp-panel() {
+.comp-panel(@border: 5px) {
 	position: relative;
-	.border-radius(5px);
+	.border-radius(@border);
 	.box-shadow( 0 0 7px darken(@grayLighter, 15%) );
 	background-color: @white;
 }
@@ -153,13 +211,21 @@ hr {
 // Mobile portrait & landscape
 @media (max-width: 767px) {
 	.ui-panel {
-		// Render each ".span*" child as it's own panel.
-		> .row > [class*="span"] {
-			.margin-top();
-			.comp-panel();
-		}
 
 		header.text-right { text-align: left; }
+
+		&:not(.panel-stackable) {
+			// Render as one panel (as intended).
+			.comp-panel(0);
+		}
+
+		&.panel-stackable {
+			// Render each ".span*" child as it's own panel.
+			> .row > [class*="span"] {
+				.margin-bottom();
+				.comp-panel(0);
+			}
+		}
 	}
 }
 

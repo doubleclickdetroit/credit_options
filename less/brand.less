@@ -11,14 +11,14 @@
 @primaryColor  : #2e536b;
 @secondaryColor: @orange;
 
-@linkColor     : @primaryColor;
-@linkColorHover: darken(@linkColor, 10%);
+@linkColor     : lighten(@primaryColor, 15%);
+@linkColorHover: darken(@primaryColor, 10%);
 
 @linkSecondaryColor     : @secondaryColor;
 @linkSecondaryColorHover: darken(@secondaryColor, 10%);
 
 @btnPrimaryBackground         : @linkColor;
-@btnPrimaryBackgroundHighlight: spin(@btnPrimaryBackground, 15%);
+@btnPrimaryBackgroundHighlight: @linkColorHover;
 
 @navbarText           : @grayLight;
 @navbarLinkColor      : @grayLight;
@@ -64,9 +64,11 @@ header.navbar .ui-navigation .nav > li {
 	}
 
 	&.active > a,
-	&.active > a:hover {
-		color: @secondaryColor; //@white;
-		background-color: none; //@linkColor;
+	&.dropdown.active > a {
+		&, &:hover {
+			color: @secondaryColor; //@white;
+			background-color: none; //@linkColor;
+		}
 	}
 }
 
@@ -94,10 +96,23 @@ header.navbar .ui-navigation .nav {
 	background-color: @dropdownLinkBackgroundHover;
 }
 
+// Button backgrounds
+// -------------------------
+.btn-primary {
+	.buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+}
+
 // Content
 // ----------------------
 [data-page] {
 	header {
 		color: @primaryColor;
+
+		.breadcrumb a { color: @linkColor; }
+	}
+
+	// Nav Pills
+	.nav-pills > .active > a, .nav-pills > .active > a:hover {
+		background-color: @linkColor;
 	}
 }

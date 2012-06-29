@@ -1,21 +1,24 @@
 /*******************************************************************************
 **** Helpers
 *******************************************************************************/
-.margin-top    { margin-top   : @gridGutterWidth; }
-.margin-right  { margin-right : @gridGutterWidth; }
-.margin-bottom { margin-bottom: @gridGutterWidth; }
-.margin-left   { margin-left  : @gridGutterWidth; }
+.margin-top    { margin-top   : @gridGutterWidth !important; }
+.margin-right  { margin-right : @gridGutterWidth !important; }
+.margin-bottom { margin-bottom: @gridGutterWidth !important; }
+.margin-left   { margin-left  : @gridGutterWidth !important; }
 .margin-sides  { .margin-right(); .margin-left(); }
 .margin-tops   { .margin-top(); .margin-bottom(); }
 .margin-all    { .margin-sides(); .margin-tops(); }
 
-.padding-top    { padding-top   : @gridGutterWidth; }
-.padding-right  { padding-right : @gridGutterWidth; }
-.padding-bottom { padding-bottom: @gridGutterWidth; }
-.padding-left   { padding-left  : @gridGutterWidth; }
+.padding-top    { padding-top   : @gridGutterWidth !important; }
+.padding-right  { padding-right : @gridGutterWidth !important; }
+.padding-bottom { padding-bottom: @gridGutterWidth !important; }
+.padding-left   { padding-left  : @gridGutterWidth !important; }
 .padding-sides  { .padding-right(); .padding-left(); }
 .padding-tops   { .padding-top(); .padding-bottom(); }
 .padding-all    { .padding-sides(); .padding-tops(); }
+
+.text-red, .text-error     { color: @errorText !important;   }
+.text-green, .text-success { color: @successText !important; }
 
 .text-gray         { color: @gray !important;        }
 .text-gray_light   { color: @grayLight !important;   }
@@ -24,18 +27,21 @@
 .text-gray_darker  { color: @grayDarker !important;  }
 
 .text-uppercase { text-transform: uppercase; }
+.text-normal    { font-weight: normal; }
 
 .text-left   { text-align: left;   }
 .text-center { text-align: center; }
 .text-right  { text-align: right;  }
 
+.layout-clear       { clear: both; }
 .layout-block       { display: block; }
 .layout-inline      { display: inline; }
 .layout-inlineblock { display: inline-block; .ie7-inline-block(); }
 
 // Mobile portrait & landscape
-@media (max-width: 767px) {
-	.pull-right.pull-fallback {
+.pull-right.pull-fallback {
+	@media (max-width: 767px) {
 		float: left;
+		clear: left;
 	}
 }
