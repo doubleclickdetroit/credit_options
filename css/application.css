@@ -5300,6 +5300,19 @@ hr {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 /***************************************************************************
+**** Components
+***************************************************************************/
+.btn-group > .dropdown-menu.pull-right.pull-fallback {
+  right: 0;
+  left: auto;
+}
+@media (max-width: 767px) {
+  .btn-group > .dropdown-menu.pull-right.pull-fallback {
+    left: 0;
+    right: auto;
+  }
+}
+/***************************************************************************
 **** Modules
 ***************************************************************************/
 [data-module=pagination] {
@@ -5329,15 +5342,27 @@ hr {
     margin-bottom: 20px !important;
   }
 }
+[data-module=pagination] .btn-group  > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+@media (max-width: 767px) {
+  [data-module=pagination] .btn-group  > .dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+}
 [data-module=pagination] .btn-group  + .pagination {
   float: right;
-  margin: 0 20px 0 0;
 }
 @media (max-width: 767px) {
   [data-module=pagination] .btn-group  + .pagination {
     float: left;
     clear: left;
   }
+}
+[data-module=pagination] .pagination {
+  margin: 0 20px 0 0;
 }
 /***************************************************************************
 **** Panel

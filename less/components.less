@@ -129,6 +129,20 @@ hr {
 
 
 /***************************************************************************
+**** Components
+***************************************************************************/
+.btn-group > .dropdown-menu.pull-right.pull-fallback {
+	right: 0;
+	left : auto;
+
+	@media (max-width: 767px) {
+		left : 0;
+		right: auto;
+	}
+}
+
+
+/***************************************************************************
 **** Modules
 ***************************************************************************/
 [data-module=pagination] {
@@ -136,19 +150,28 @@ hr {
 	.clearfix();
 	.margin-bottom();
 
+	// Result selector
 	.btn-group {
 		.pull-right();
 		.pull-right.pull-fallback();
+
 		margin-top: 3px;
 
 		@media (max-width: 767px) { .margin-bottom(); }
 
-		// Pagination list
+		& > .dropdown-menu {
+			.btn-group > .dropdown-menu.pull-right.pull-fallback();
+		}
+
 		& + .pagination {
 			.pull-right();
 			.pull-right.pull-fallback();
-			margin: 0 @gridGutterWidth 0 0;
 		}
+	}
+
+	// Pagination list
+	.pagination {
+		margin: 0 @gridGutterWidth 0 0;
 	}
 }
 
