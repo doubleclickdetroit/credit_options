@@ -78,6 +78,67 @@ hr {
 		}
 	}
 
+	.help-block, .help-inline {
+		margin-top: 5px;
+		font-size: @baseFontSize - 2px;
+		color: lighten( @grayLight, 5% );
+
+		&.help-inline {
+			// Mobile portrait & landscape
+			@media (max-width: 767px) {
+				display: block;
+			}
+		}
+	}
+
+}
+
+
+
+/***************************************************************************
+**** Nav Tabs
+***************************************************************************/
+.nav-tabs.stacked-fallback {
+
+	// Force STACKING for
+	// UP TO LANDSCAPE PHONE
+	@media (max-width: 767px) {
+		border-bottom: 0;
+
+		& > li {
+			float: none;
+
+			> a {
+				border: 1px solid #ddd;
+				.border-radius(0);
+
+				&:hover {
+					border-color: #ddd;
+					z-index: 2;
+				}
+			}
+		}
+
+		& > li:first-child > a {
+			.border-radius(4px 4px 0 0);
+		}
+
+		& > li:last-child > a {
+			.border-radius(0 0 4px 4px);
+		}
+	}
+}
+
+
+
+/***************************************************************************
+**** Input Prepend
+***************************************************************************/
+.input-prepend {
+	// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+	@media (max-width: 767px) {
+		.add-on { .hidden(); }
+	}
 }
 
 

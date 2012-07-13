@@ -5206,6 +5206,58 @@ hr {
 [data-page] header nav.subnav ul.nav {
   margin-bottom: 8px;
 }
+[data-page] .help-block,
+[data-page] .help-inline {
+  margin-top: 5px;
+  font-size: 11px;
+  color: #a6a6a6;
+}
+@media (max-width: 767px) {
+  [data-page] .help-block.help-inline,
+  [data-page] .help-inline.help-inline {
+    display: block;
+  }
+}
+/***************************************************************************
+**** Nav Tabs
+***************************************************************************/
+@media (max-width: 767px) {
+  .nav-tabs.stacked-fallback {
+    border-bottom: 0;
+  }
+  .nav-tabs.stacked-fallback  > li {
+    float: none;
+  }
+  .nav-tabs.stacked-fallback  > li > a {
+    border: 1px solid #ddd;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  .nav-tabs.stacked-fallback  > li > a:hover {
+    border-color: #ddd;
+    z-index: 2;
+  }
+  .nav-tabs.stacked-fallback  > li:first-child > a {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs.stacked-fallback  > li:last-child > a {
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+  }
+}
+/***************************************************************************
+**** Input Prepend
+***************************************************************************/
+@media (max-width: 767px) {
+  .input-prepend .add-on {
+    display: none;
+    visibility: hidden;
+  }
+}
 /***************************************************************************
 **** Horizontal List
 ***************************************************************************/
