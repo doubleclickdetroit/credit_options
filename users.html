@@ -468,119 +468,222 @@
                         <li><a href="#user_confirmation" data-toggle="tab">Confirmation</a></li>
                     </ul>
 
-                    <div class="tab-content form-horizontal">
+                    <div class="tab-content">
 
-                        <form action="" class="tab-pane active" id="user_information">
-                            <div class="row">
-                                <div class="span6">
-                                    <fieldset class="padding-sides">
-                                        <legend>User Information</legend>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">User Type:</label>
-                                            <div class="controls">
-                                                <select required><option>Internal</option></select>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">First Name:</label>
-                                            <div class="controls">
-                                                <input type="text" required>
-                                                <p class="help-block">Max of 30 characters.</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Last Name:</label>
-                                            <div class="controls">
-                                                <input type="text" required>
-                                                <p class="help-block">Max of 30 characters.</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Middle Initial:</label>
-                                            <div class="controls"><input type="text" class="input-mini" maxlength="1"></div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Requested Username:</label>
-                                            <div class="controls">
-                                                <input type="text" required>
-                                                <p class="help-block">Max of 30 characters.</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Email Address:</label>
-                                            <div class="controls">
-                                                <div class="input-prepend">
-                                                    <span class="add-on" rel="tooltip" title="e.g. user@example.com"><i class="icon-info-sign"></i></span><input type="text" maxlength="60" required>
-                                                </div>
-                                                <p class="help-block">Max of 60 characters.</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Phone:</label>
-                                            <div class="controls">
-                                                <div class="input-prepend">
-                                                    <span class="add-on" rel="tooltip" title="e.g. 5555555555 or 555-555-5555"><i class="icon-info-sign"></i></span><input type="text" maxlength="12" required>
-                                                </div>
-                                                <p class="help-block">Max of 10 numbers.</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Phone Extension:</label>
-                                            <div class="controls">
-                                                <div class="input-prepend">
-                                                    <span class="add-on" rel="tooltip" title="e.g. 5555"><i class="icon-info-sign"></i></span><input type="text" maxlength="4" class="input-mini">
+                        <div id="user_information" class="tab-pane active">
+                            <form action="" class="form-horizontal">
+                                <div class="row">
+                                    <div class="span6">
+                                        <fieldset class="padding-sides">
+                                            <legend>User Information</legend>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">User Type:</label>
+                                                <div class="controls">
+                                                    <select required><option>Internal</option></select>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Fax:</label>
-                                            <div class="controls">
-                                                <div class="input-prepend">
-                                                    <span class="add-on" rel="tooltip" title="e.g. 5555555555 or 555-555-5555"><i class="icon-info-sign"></i></span><input type="text" maxlength="12" required>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">First Name:</label>
+                                                <div class="controls">
+                                                    <input type="text" required>
+                                                    <p class="help-block">Max of 30 characters.</p>
                                                 </div>
-                                                <p class="help-block">Max of 10 numbers.</p>
                                             </div>
-                                        </div>
-                                    </fieldset>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Last Name:</label>
+                                                <div class="controls">
+                                                    <input type="text" required>
+                                                    <p class="help-block">Max of 30 characters.</p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Middle Initial:</label>
+                                                <div class="controls"><input type="text" class="input-mini" maxlength="1"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Requested Username:</label>
+                                                <div class="controls">
+                                                    <input type="text" required>
+                                                    <p class="help-block">Max of 30 characters.</p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Email Address:</label>
+                                                <div class="controls">
+                                                    <div class="input-prepend">
+                                                        <span class="add-on" rel="tooltip" title="e.g. user@example.com"><i class="icon-info-sign"></i></span><input type="text" maxlength="60" required>
+                                                    </div>
+                                                    <p class="help-block">Max of 60 characters.</p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Phone:</label>
+                                                <div class="controls">
+                                                    <div class="input-prepend">
+                                                        <span class="add-on" rel="tooltip" title="e.g. 5555555555 or 555-555-5555"><i class="icon-info-sign"></i></span><input type="text" maxlength="12" required>
+                                                    </div>
+                                                    <p class="help-block">Max of 10 numbers.</p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Phone Extension:</label>
+                                                <div class="controls">
+                                                    <div class="input-prepend">
+                                                        <span class="add-on" rel="tooltip" title="e.g. 5555"><i class="icon-info-sign"></i></span><input type="text" maxlength="4" class="input-mini">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Fax:</label>
+                                                <div class="controls">
+                                                    <div class="input-prepend">
+                                                        <span class="add-on" rel="tooltip" title="e.g. 5555555555 or 555-555-5555"><i class="icon-info-sign"></i></span><input type="text" maxlength="12" required>
+                                                    </div>
+                                                    <p class="help-block">Max of 10 numbers.</p>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="span6">
+                                        <fieldset class="padding-bottom padding-sides">
+                                            <legend>Account Number</legend>
+                                            <div class="control-group">
+                                                <label class="control-label" for="">Account Number:</label>
+                                                <div class="controls"><input type="text" required></div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="padding-sides">
+                                            <legend>Select User Role</legend>
+                                            <div class="control-group">
+                                                <p>Please select one of the following roles for <strong id="user_name">John Doe</strong>.</p>
+                                                <label class="control-label">User Roles:</label>
+
+                                                <div class="controls">
+                                                    <label class="radio">
+                                                        <input type="radio" name="user_roles" value="fleet_manager" checked>
+                                                            Fleet Manager
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="user_roles" value="fleet_reporting">
+                                                            Fleet Reporting
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="user_roles" value="fleet_user">
+                                                            Fleet User
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="form-actions padding-sides">
+                                    <button type="button" class="btn btn-primary btn-large pull-right">Next</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div id="user_summary" class="tab-pane">
+                            <div class="padding-sides">
+                                <div class="alert alert-info">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Please Note:</strong> The Username will not be assigned until the confirmation is approaved.
                                 </div>
 
-                                <div class="span6">
-                                    <fieldset class="padding-sides">
-                                        <legend>Account Number</legend>
-                                        <div class="control-group">
-                                            <label class="control-label" for="">Account Number:</label>
-                                            <div class="controls"><input type="text" required></div>
-                                        </div>
-                                    </fieldset>
+                                <p>Please review the information below for accuracy.</p>
 
-                                    <fieldset class="padding-sides">
-                                        <legend>Select User Role</legend>
-                                        <div class="control-group">
-                                            <p>Please select one of the following roles for <strong id="user_name">John Doe</strong>.</p>
-                                            <label class="control-label">User Roles:</label>
-
-                                            <div class="controls">
-                                                <label class="radio">
-                                                    <input type="radio" name="user_roles" value="fleet_manager" checked>
-                                                        Fleet Manager
-                                                </label>
-                                                <label class="radio">
-                                                    <input type="radio" name="user_roles" value="fleet_reporting">
-                                                        Fleet Reporting
-                                                </label>
-                                                <label class="radio">
-                                                    <input type="radio" name="user_roles" value="fleet_user">
-                                                        Fleet User
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
-                                </div>
+                                <table class="table table-bordered table-readonly">
+                                    <tbody>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Middle Initial</th>
+                                        </tr>
+                                        <tr>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Requested Username</th>
+                                            <th>Role</th>
+                                            <th>Email Address</th>
+                                        </tr>
+                                        <tr>
+                                            <td>jdoe</td>
+                                            <td>Fleet Manager</td>
+                                            <td>jdoe@yahoo.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Phone</th>
+                                            <th>Phone Extension</th>
+                                            <th>Fax</th>
+                                        </tr>
+                                        <tr>
+                                            <td>(888) 888-8888</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div class="form-actions padding-sides">
-                                <button type="submit" class="btn btn-primary btn-large pull-right">Search</button>
+                                <button type="button" class="btn btn-primary btn-large pull-right">Accept</button>
+                                <button type="button" class="btn btn-large pull-left">Back</button>
                             </div>
-                        </form>
+                        </div>
+
+                        <div id="user_confirmation" class="tab-pane">
+                            <div class="padding-sides">
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Success!</strong> Your request has been successfully processed.
+                                </div>
+
+                                <p>The user will be required to reset their password when logging in for the first time.</p>
+
+                                <table class="table table-bordered table-readonly">
+                                    <tbody>
+                                        <tr>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Middle Initial</th>
+                                        </tr>
+                                        <tr>
+                                            <td>John</td>
+                                            <td>Doe</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Requested Username</th>
+                                            <th>Role</th>
+                                            <th>Email Address</th>
+                                        </tr>
+                                        <tr>
+                                            <td>jdoe</td>
+                                            <td>Fleet Manager</td>
+                                            <td>jdoe@yahoo.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Phone</th>
+                                            <th>Phone Extension</th>
+                                            <th>Fax</th>
+                                        </tr>
+                                        <tr>
+                                            <td>(888) 888-8888</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="form-actions padding-sides">
+                                <button type="button" class="btn btn-primary btn-large pull-right"><i class="icon icon-white icon-print"></i> Print</button>
+                                <button type="button" class="btn btn-large pull-left">Close</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

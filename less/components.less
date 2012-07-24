@@ -98,34 +98,42 @@ hr {
 /***************************************************************************
 **** Nav Tabs
 ***************************************************************************/
-.nav-tabs.stacked-fallback {
+.nav-tabs {
 
-	// Force STACKING for
-	// UP TO LANDSCAPE PHONE
-	@media (max-width: 767px) {
-		border-bottom: 0;
+	&.stacked-fallback {
+		// Force STACKING for
+		// UP TO LANDSCAPE PHONE
+		@media (max-width: 767px) {
+			border-bottom: 0;
 
-		& > li {
-			float: none;
+			& > li {
+				float: none;
 
-			> a {
-				border: 1px solid #ddd;
-				.border-radius(0);
+				> a {
+					border: 1px solid #ddd;
+					.border-radius(0);
 
-				&:hover {
-					border-color: #ddd;
-					z-index: 2;
+					&:hover {
+						border-color: #ddd;
+						z-index: 2;
+					}
 				}
 			}
-		}
 
-		& > li:first-child > a {
-			.border-radius(4px 4px 0 0);
-		}
+			& > li:first-child > a {
+				.border-radius(4px 4px 0 0);
+			}
 
-		& > li:last-child > a {
-			.border-radius(0 0 4px 4px);
+			& > li:last-child > a {
+				.border-radius(0 0 4px 4px);
+			}
 		}
+	}
+
+	// ignore margins from child elements
+	// helpful when form has bottom margin
+	& + .tab-content {
+		overflow: inherit;
 	}
 }
 
@@ -202,6 +210,12 @@ hr {
 	}
 }
 
+.form-actions {
+	.pull-right {
+		&.btn + .btn { margin-right: @gridGutterWidth; }
+	}
+}
+
 
 /***************************************************************************
 **** Modules
@@ -271,6 +285,12 @@ hr {
 				tr:nth-child(odd) th {
 					background-color: @tableBackgroundAccent;
 				}
+			}
+		}
+
+		&.table-readonly {
+			tr th {
+				background-color: lighten( @grayLighter, 3% ) !important;
 			}
 		}
 	}

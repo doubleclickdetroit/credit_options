@@ -5249,6 +5249,9 @@ hr {
     border-radius: 0 0 4px 4px;
   }
 }
+.nav-tabs  + .tab-content {
+  overflow: inherit;
+}
 /***************************************************************************
 **** Input Prepend
 ***************************************************************************/
@@ -5364,6 +5367,9 @@ hr {
     right: auto;
   }
 }
+.form-actions .pull-right.btn + .btn {
+  margin-right: 20px;
+}
 /***************************************************************************
 **** Modules
 ***************************************************************************/
@@ -5445,6 +5451,9 @@ hr {
 .ui-panel .table:not(.table-hoverable).table-striped tbody tr:nth-child(odd) td,
 .ui-panel .table:not(.table-hoverable).table-striped tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
+}
+.ui-panel .table.table-readonly tr th {
+  background-color: #f6f6f6 !important;
 }
 @media (min-width: 768px) {
   .ui-panel {
