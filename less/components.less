@@ -96,6 +96,50 @@ hr {
 
 
 /***************************************************************************
+**** Forms
+***************************************************************************/
+select.span-auto { width: auto; }
+
+.input-small {
+	&.input-small-fallback {
+		// UP TO LANDSCAPE PHONE
+		@media (max-width: 767px) {
+			width: 100%;
+		}
+	}
+}
+
+.form-horizontal {
+	.control-group {
+
+		&.stacked-fallback {
+			// UP TO LANDSCAPE PHONE
+			@media (max-width: 767px) {
+
+				// Force stacking
+				> label {
+					float: none;
+					width: auto;
+					padding-top: 0;
+					text-align: left;
+				}
+
+				// Move over all input controls and content
+				.controls {
+					margin-left: 0;
+				}
+				// Move the options list down to align with labels
+				.control-list {
+					padding-top: 0; // has to be padding because margin collaspes
+				}
+			}
+		}
+	}
+}
+
+
+
+/***************************************************************************
 **** Nav Tabs
 ***************************************************************************/
 .nav-tabs {
@@ -143,9 +187,12 @@ hr {
 **** Input Prepend
 ***************************************************************************/
 .input-prepend {
-	// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
-	@media (max-width: 767px) {
-		.add-on { .hidden(); }
+	&:not(.visible-fallback) {
+
+		// LANDSCAPE PHONE TO SMALL DESKTOP & PORTRAIT TABLET
+		@media (max-width: 767px) {
+			.add-on { .hidden(); }
+		}
 	}
 }
 
@@ -216,6 +263,14 @@ hr {
 	}
 }
 
+.alert {
+	strong {
+		@media (max-width: 767px) {
+			display: block;
+		}
+	}
+}
+
 
 /***************************************************************************
 **** Modules
@@ -273,6 +328,15 @@ hr {
 					border-top: 0;
 				}
 			}
+		}
+
+		&.table-inline {
+			width: auto;
+			th, td { padding-left: @gridGutterWidth/1.5; padding-right: @gridGutterWidth/1.5; }
+		}
+
+		&.table-borderless {
+			th, td { border-top: none; }
 		}
 
 		&:not(.table-hoverable) {

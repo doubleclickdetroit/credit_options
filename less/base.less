@@ -9,6 +9,14 @@
 .margin-tops   { .margin-top(); .margin-bottom(); }
 .margin-all    { .margin-sides(); .margin-tops(); }
 
+.margin-no-top    { margin-top   : 0 !important; }
+.margin-no-right  { margin-right : 0 !important; }
+.margin-no-bottom { margin-bottom: 0 !important; }
+.margin-no-left   { margin-left  : 0 !important; }
+.margin-no-sides  { .margin-no-right(); .margin-no-left(); }
+.margin-no-tops   { .margin-no-top(); .margin-no-bottom(); }
+.margin-none    { .margin-no-sides(); .margin-no-tops(); }
+
 .padding-top    { padding-top   : @gridGutterWidth !important; }
 .padding-right  { padding-right : @gridGutterWidth !important; }
 .padding-bottom { padding-bottom: @gridGutterWidth !important; }
@@ -16,6 +24,14 @@
 .padding-sides  { .padding-right(); .padding-left(); }
 .padding-tops   { .padding-top(); .padding-bottom(); }
 .padding-all    { .padding-sides(); .padding-tops(); }
+
+.padding-no-top    { padding-top   : 0 !important; }
+.padding-no-right  { padding-right : 0 !important; }
+.padding-no-bottom { padding-bottom: 0 !important; }
+.padding-no-left   { padding-left  : 0 !important; }
+.padding-no-sides  { .padding-no-right(); .padding-no-left(); }
+.padding-no-tops   { .padding-no-top(); .padding-no-bottom(); }
+.padding-none    { .padding-no-sides(); .padding-no-tops(); }
 
 .text-red, .text-error     { color: @errorText !important;   }
 .text-green, .text-success { color: @successText !important; }
@@ -33,12 +49,26 @@
 .text-center { text-align: center; }
 .text-right  { text-align: right;  }
 
-.layout-clear       { clear: both; }
 .layout-block       { display: block; }
 .layout-inline      { display: inline; }
 .layout-inlineblock { display: inline-block; .ie7-inline-block(); }
+.layout-clear       {
+	&:not(.layout-clear-fallback) { clear: both; }
+
+	&.layout-clear-fallback {
+		@media (max-width: 767px) {
+			clear: both;
+		}
+	}
+}
 
 // Mobile portrait & landscape
+.pull-left.pull-fallback {
+	@media (max-width: 767px) {
+		float: none;
+		clear: left;
+	}
+}
 .pull-right.pull-fallback {
 	@media (max-width: 767px) {
 		float: left;
