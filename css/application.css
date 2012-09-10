@@ -5473,6 +5473,20 @@ select.span-auto {
     right: auto;
   }
 }
+.form-actions a:not(.btn) {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 9px 14px;
+  font-size: 15px;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: underline;
+}
 .form-actions .pull-right.btn + .btn {
   margin-right: 20px;
 }

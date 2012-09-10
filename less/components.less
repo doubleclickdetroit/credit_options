@@ -258,6 +258,13 @@ select.span-auto { width: auto; }
 }
 
 .form-actions {
+	a {
+		&:not(.btn) {
+			.layout-inlineblock();
+			.btn-large();
+			text-decoration: underline;
+		}
+	}
 	.pull-right {
 		&.btn + .btn { margin-right: @gridGutterWidth; }
 	}
