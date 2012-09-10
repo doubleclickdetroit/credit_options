@@ -4946,6 +4946,32 @@ a.badge:hover {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
 }
+.margin-no-top {
+  margin-top: 0 !important;
+}
+.margin-no-right {
+  margin-right: 0 !important;
+}
+.margin-no-bottom {
+  margin-bottom: 0 !important;
+}
+.margin-no-left {
+  margin-left: 0 !important;
+}
+.margin-no-sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.margin-no-tops {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.margin-none {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 .padding-top {
   padding-top: 20px !important;
 }
@@ -4971,6 +4997,32 @@ a.badge:hover {
   padding-left: 20px !important;
   padding-top: 20px !important;
   padding-bottom: 20px !important;
+}
+.padding-no-top {
+  padding-top: 0 !important;
+}
+.padding-no-right {
+  padding-right: 0 !important;
+}
+.padding-no-bottom {
+  padding-bottom: 0 !important;
+}
+.padding-no-left {
+  padding-left: 0 !important;
+}
+.padding-no-sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.padding-no-tops {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.padding-none {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 .text-red,
 .text-error {
@@ -5010,14 +5062,8 @@ a.badge:hover {
 .text-right {
   text-align: right;
 }
-.layout-clear {
-  clear: both;
-}
 .layout-block {
   display: block;
-}
-.layout-inline {
-  display: inline;
 }
 .layout-inlineblock {
   display: inline-block;
@@ -5025,6 +5071,28 @@ a.badge:hover {
   /* IE7 inline-block hack */
 
   *zoom: 1;
+}
+.layout-inline {
+  display: inline;
+}
+@media (max-width: 480px) {
+  .layout-inline .fallback {
+    display: block;
+  }
+}
+.layout-clear:not(.layout-clear-fallback) {
+  clear: both;
+}
+@media (max-width: 767px) {
+  .layout-clear.layout-clear-fallback {
+    clear: both;
+  }
+}
+@media (max-width: 767px) {
+  .pull-left.pull-fallback {
+    float: none;
+    clear: left;
+  }
 }
 @media (max-width: 767px) {
   .pull-right.pull-fallback {
@@ -5067,8 +5135,8 @@ header.navbar .nav > li > a  > b {
   margin-left: 10px;
 }
 header.navbar .ui-session .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 header.navbar .ui-session .nav > li > a {
   padding: auto 10px;
@@ -5171,7 +5239,7 @@ hr {
 }
 @media (max-width: 767px) {
   [data-page] {
-    padding-top: 0;
+    padding-top: 0 !important;
   }
 }
 [data-page] header {
@@ -5199,9 +5267,16 @@ hr {
   background: none;
 }
 [data-page] header nav.subnav {
-  clear: both;
   padding: 8px 0 0 20px;
   border-top: 1px solid #eeeeee;
+}
+[data-page] header nav.subnav:not(.layout-clear-fallback) {
+  clear: both;
+}
+@media (max-width: 767px) {
+  [data-page] header nav.subnav.layout-clear-fallback {
+    clear: both;
+  }
 }
 [data-page] header nav.subnav ul.nav {
   margin-bottom: 8px;
@@ -5216,6 +5291,31 @@ hr {
   [data-page] .help-block.help-inline,
   [data-page] .help-inline.help-inline {
     display: block;
+  }
+}
+/***************************************************************************
+**** Forms
+***************************************************************************/
+select.span-auto {
+  width: auto;
+}
+@media (max-width: 767px) {
+  .input-small.input-small-fallback {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .form-horizontal .control-group.stacked-fallback > label {
+    float: none;
+    width: auto;
+    padding-top: 0 !important;
+    text-align: left;
+  }
+  .form-horizontal .control-group.stacked-fallback .controls {
+    margin-left: 0 !important;
+  }
+  .form-horizontal .control-group.stacked-fallback .control-list {
+    padding-top: 0 !important;
   }
 }
 /***************************************************************************
@@ -5256,7 +5356,7 @@ hr {
 **** Input Prepend
 ***************************************************************************/
 @media (max-width: 767px) {
-  .input-prepend .add-on {
+  .input-prepend:not(.visible-fallback) .add-on {
     display: none;
     visibility: hidden;
   }
@@ -5266,7 +5366,10 @@ hr {
 ***************************************************************************/
 .list-horizontal {
   *zoom: 1;
-  margin: 0;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   list-style: none;
 }
 .list-horizontal:before,
@@ -5296,7 +5399,10 @@ hr {
 ***************************************************************************/
 .ui-linkgroup {
   *zoom: 1;
-  margin: 0;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   list-style: none;
   background-color: #f5f5f5;
   background-image: -moz-linear-gradient(top, #eeeeee, #ffffff);
@@ -5370,6 +5476,11 @@ hr {
 .form-actions .pull-right.btn + .btn {
   margin-right: 20px;
 }
+@media (max-width: 767px) {
+  .alert strong {
+    display: block;
+  }
+}
 /***************************************************************************
 **** Modules
 ***************************************************************************/
@@ -5426,7 +5537,7 @@ hr {
 **** Panel
 ***************************************************************************/
 .ui-panel .table {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   background-color: #ffffff;
 }
 .ui-panel .table tbody tr th,
@@ -5443,6 +5554,18 @@ hr {
 .ui-panel .table tbody:first-child tr:first-child th,
 .ui-panel .table tbody:first-child tr:first-child td {
   border-top: 0;
+}
+.ui-panel .table.table-inline {
+  width: auto;
+}
+.ui-panel .table.table-inline th,
+.ui-panel .table.table-inline td {
+  padding-left: 13.333333333333334px;
+  padding-right: 13.333333333333334px;
+}
+.ui-panel .table.table-borderless th,
+.ui-panel .table.table-borderless td {
+  border-top: none;
 }
 .ui-panel .table:not(.table-hoverable) tbody tr:hover th,
 .ui-panel .table:not(.table-hoverable) tbody tr:hover td {
