@@ -5076,7 +5076,7 @@ a.badge:hover {
   display: inline;
 }
 @media (max-width: 480px) {
-  .layout-inline .fallback {
+  .layout-inline.fallback {
     display: block;
   }
 }
