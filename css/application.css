@@ -5296,12 +5296,52 @@ hr {
 /***************************************************************************
 **** Forms
 ***************************************************************************/
+label.required:after {
+  content: " *";
+  color: #b94a48 !important;
+  font-weight: bold;
+  font-size: 13px;
+}
 select.span-auto {
   width: auto;
 }
 @media (max-width: 767px) {
   .input-small.input-small-fallback {
     width: 100%;
+  }
+}
+.form-horizontal label.layout-inline {
+  width: auto;
+}
+.form-horizontal label.layout-inline .inline {
+  margin-right: 20px !important;
+}
+.form-horizontal label.layout-inline .inline  + .controls,
+.form-horizontal label.layout-inline .inline  + .control-group {
+  margin-left: 0 !important;
+}
+@media (max-width: 480px) {
+  
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .form-horizontal label.layout-inline {
+    margin-right: 20px !important;
+  }
+  .form-horizontal label.layout-inline  + .controls,
+  .form-horizontal label.layout-inline  + .control-group {
+    margin-left: 0 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+@media (min-width: 980px) {
+  .form-horizontal label.layout-inline {
+    margin-right: 20px !important;
+  }
+  .form-horizontal label.layout-inline  + .controls,
+  .form-horizontal label.layout-inline  + .control-group {
+    margin-left: 0 !important;
   }
 }
 @media (max-width: 767px) {

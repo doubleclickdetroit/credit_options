@@ -98,6 +98,17 @@ hr {
 /***************************************************************************
 **** Forms
 ***************************************************************************/
+label {
+	&.required {
+		&:after {
+			content: " *";
+			.text-red();
+			font-weight: bold;
+			font-size: @baseFontSize;
+		}
+	}
+}
+
 select.span-auto { width: auto; }
 
 .input-small {
@@ -110,6 +121,24 @@ select.span-auto { width: auto; }
 }
 
 .form-horizontal {
+
+	label.layout-inline {
+		width: auto;
+
+		.inline {
+			& { .margin-right(); }
+			& + .controls,
+			& + .control-group {
+				.margin-no-left();
+			}
+		}
+
+		@media (max-width: 480px)                        {            } // block
+		@media (min-width: 481px) and (max-width: 767px) { .inline(); } // inline
+		@media (min-width: 768px) and (max-width: 979px) {            } // block
+		@media (min-width: 980px)                        { .inline(); } // inline
+	}
+
 	.control-group {
 
 		&.stacked-fallback {
