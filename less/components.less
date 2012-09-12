@@ -99,12 +99,16 @@ hr {
 **** Forms
 ***************************************************************************/
 label {
+	&:after {
+		visibility: hidden;
+		content: " *";
+		font-weight: bold;
+		font-size: @baseFontSize;
+	}
 	&.required {
 		&:after {
-			content: " *";
 			.text-red();
-			font-weight: bold;
-			font-size: @baseFontSize;
+			visibility: visible;
 		}
 	}
 }

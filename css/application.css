@@ -5053,6 +5053,9 @@ a.badge:hover {
 .text-normal {
   font-weight: normal;
 }
+.text-bold {
+  font-weight: bold;
+}
 .text-left {
   text-align: left;
 }
@@ -5296,11 +5299,15 @@ hr {
 /***************************************************************************
 **** Forms
 ***************************************************************************/
-label.required:after {
+label:after {
+  visibility: hidden;
   content: " *";
-  color: #b94a48 !important;
   font-weight: bold;
   font-size: 13px;
+}
+label.required:after {
+  color: #b94a48 !important;
+  visibility: visible;
 }
 select.span-auto {
   width: auto;
