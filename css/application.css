@@ -5057,13 +5057,13 @@ a.badge:hover {
   font-weight: bold;
 }
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 .layout-block {
   display: block;
@@ -5299,16 +5299,6 @@ hr {
 /***************************************************************************
 **** Forms
 ***************************************************************************/
-label:after {
-  visibility: hidden;
-  content: " *";
-  font-weight: bold;
-  font-size: 13px;
-}
-label.required:after {
-  color: #b94a48 !important;
-  visibility: visible;
-}
 select.span-auto {
   width: auto;
 }
@@ -5317,25 +5307,76 @@ select.span-auto {
     width: 100%;
   }
 }
-.form-horizontal label.layout-inline {
+.form-horizontal label.radio div,
+.form-horizontal label.checkbox div,
+.form-horizontal label.radio span,
+.form-horizontal label.checkbox span {
+  vertical-align: top;
+}
+.form-horizontal div.control-label .block,
+.form-horizontal span.control-label .block {
+  float: none;
+  text-align: left;
+}
+@media (max-width: 480px) {
+  .form-horizontal div.control-label,
+  .form-horizontal span.control-label {
+    float: none;
+    text-align: left;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .form-horizontal div.control-label,
+  .form-horizontal span.control-label {
+    float: none;
+    text-align: left;
+  }
+}
+@media (min-width: 980px) {
+  
+}
+.form-horizontal .control-label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-horizontal .control-label:after {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  text-align: right !important;
+  visibility: hidden;
+  width: 8px;
+  content: " *";
+  font-weight: bold;
+}
+.form-horizontal .control-label.required:after {
+  color: #b94a48 !important;
+  visibility: visible;
+}
+.form-horizontal .control-label.layout-inline {
   width: auto;
 }
-.form-horizontal label.layout-inline .inline {
+.form-horizontal .control-label.layout-inline .inline {
   margin-right: 20px !important;
 }
-.form-horizontal label.layout-inline .inline  + .controls,
-.form-horizontal label.layout-inline .inline  + .control-group {
+.form-horizontal .control-label.layout-inline .inline  + .controls,
+.form-horizontal .control-label.layout-inline .inline  + .control-group {
   margin-left: 0 !important;
 }
 @media (max-width: 480px) {
   
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  .form-horizontal label.layout-inline {
+  .form-horizontal .control-label.layout-inline {
     margin-right: 20px !important;
   }
-  .form-horizontal label.layout-inline  + .controls,
-  .form-horizontal label.layout-inline  + .control-group {
+  .form-horizontal .control-label.layout-inline  + .controls,
+  .form-horizontal .control-label.layout-inline  + .control-group {
     margin-left: 0 !important;
   }
 }
@@ -5343,13 +5384,26 @@ select.span-auto {
   
 }
 @media (min-width: 980px) {
-  .form-horizontal label.layout-inline {
+  .form-horizontal .control-label.layout-inline {
     margin-right: 20px !important;
   }
-  .form-horizontal label.layout-inline  + .controls,
-  .form-horizontal label.layout-inline  + .control-group {
+  .form-horizontal .control-label.layout-inline  + .controls,
+  .form-horizontal .control-label.layout-inline  + .control-group {
     margin-left: 0 !important;
   }
+}
+.form-horizontal .control-label  + .controls .readonly-value {
+  width: 210px;
+  color: #555555;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  vertical-align: middle;
+  padding-left: 5px;
+  color: #999999 !important;
+  padding: 4px;
 }
 @media (max-width: 767px) {
   .form-horizontal .control-group.stacked-fallback > label {
@@ -5363,6 +5417,25 @@ select.span-auto {
   }
   .form-horizontal .control-group.stacked-fallback .control-list {
     padding-top: 0 !important;
+  }
+}
+.form-horizontal .control-group .controls .margin-left {
+  margin-left: 60px;
+}
+@media (max-width: 480px) {
+  
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .form-horizontal .control-group .controls.margin-small {
+    margin-left: 60px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+@media (min-width: 980px) {
+  .form-horizontal .control-group .controls.margin-small {
+    margin-left: 60px;
   }
 }
 /***************************************************************************
@@ -5537,6 +5610,9 @@ select.span-auto {
 .form-actions .pull-right.btn + .btn {
   margin-right: 20px;
 }
+.form-actions .pull-right  > .btn + .btn {
+  margin-left: 20px;
+}
 @media (max-width: 767px) {
   .alert strong {
     display: block;
@@ -5597,6 +5673,12 @@ select.span-auto {
 /***************************************************************************
 **** Panel
 ***************************************************************************/
+.ui-panel [class*="span"] form {
+  margin-bottom: 0 !important;
+}
+.ui-panel [class*="span"] form .form-actions {
+  margin-bottom: 0 !important;
+}
 .ui-panel .table {
   margin-bottom: 0 !important;
   background-color: #ffffff;
@@ -5665,7 +5747,7 @@ select.span-auto {
     box-shadow: 0 0 7px #c8c8c8;
     background-color: #ffffff;
   }
-  .ui-panel.panel-stackable > .row > [class*="span"] {
+  .ui-panel.panel-stackable > [class*="row"] > [class*="span"] {
     margin-bottom: 20px !important;
     position: relative;
     -webkit-border-radius: 0;
@@ -5718,7 +5800,6 @@ select.span-auto {
 }
 .ui-tiles.tiles-horizontal .ui-tile {
   margin-bottom: 20px !important;
-  padding: 10px;
   background-color: #fcfcfc;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(35%, #ffffff), to(#f2f2f2));
   background-image: -webkit-linear-gradient(#ffffff, #ffffff 35%, #f2f2f2);
@@ -5728,6 +5809,7 @@ select.span-auto {
   background-image: linear-gradient(#ffffff, #ffffff 35%, #f2f2f2);
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=0);
+  padding: 10px;
   border: 1px solid #d5d5d5;
 }
 .ui-tiles.tiles-horizontal .ui-tile img {
@@ -5738,6 +5820,29 @@ select.span-auto {
 }
 .ui-tiles.tiles-horizontal .ui-tile img.pull-right {
   margin-left: 10px;
+}
+.ui-tiles:not(.tiles-vertical):not(.tiles-horizontal) {
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+}
+.ui-tiles:not(.tiles-vertical):not(.tiles-horizontal) .ui-tile {
+  padding-right: 20px !important;
+  padding-left: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: #fcfcfc;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(35%, #ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff 35%, #f2f2f2);
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 35%, #f2f2f2);
+  background-image: -ms-linear-gradient(#ffffff, #ffffff 35%, #f2f2f2);
+  background-image: -o-linear-gradient(#ffffff, #ffffff 35%, #f2f2f2);
+  background-image: linear-gradient(#ffffff, #ffffff 35%, #f2f2f2);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType=0);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
 }
 @media (min-width: 768px) {
   .ui-tiles .drop-shadow {

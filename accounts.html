@@ -19,13 +19,11 @@
     <link rel="stylesheet" href="css/application.css">
     <link rel="stylesheet" href="css/brand.css">
 
-    <!-- Page Styles -->
-    <link rel="stylesheet" href="css/page-dashboard.css">
-
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
     <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 
@@ -84,16 +82,17 @@
                             <li>
                                 <a href="dashboard.html">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Activity<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="users.html">Manage Users</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Make Payment<b class="caret"></b></a>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Payments<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
+                                    <li><a href="payments.html">Make Payment</a></li>
+                                    <li><a href="accounts.html">Manage Bank Accounts</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -140,59 +139,141 @@
         </nav>
     </header>
 
-    <div class="container" data-page="users">
+    <div class="container" data-page="payments">
         <div class="ui-panel">
 
-            <header>
-                <h2>Forgot Password</h2>
+            <header class="clearfix">
+                <h2 class="pull-left">Make Payment</h2>
+
+                <!-- Breadcrumb :: Hidden Phone -->
+                <nav class="pull-right hidden-phone">
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="brand-secondary">Payments</a> <span class="divider">/</span></li>
+                        <li class="active">Make Payment</li>
+                    </ul>
+                </nav>
             </header>
 
-
             <div class="padding-all">
-                <div class="row">
-                    <div class="span8 well">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dolor velit, varius a mattis a, dictum in diam. Duis nibh sapien, sodales ac fermentum id, tempor nec augue. Sed tristique elit et sapien eleifend sodales. Nulla facilisi.</p>
-                    </div>
+                <div class="well">
+                    <h3>Manage Bank Accounts</h3>
+                    <p>Donec eleifend ipsum in ante tempus sodales. Pellentesque placerat, mauris id dictum aliquam, ipsum ipsum eleifend sem, sit amet volutpat erat diam sit amet augue. Suspendisse potenti. Nulla facilisi. Vivamus faucibus, tellus vitae posuere scelerisque, lectus quam ultrices sapien, nec fringilla purus dolor a est.</p>
                 </div>
-            </div>
 
-            <div class="ui-fieldset padding-sides">
-                <h2>Lorem Ipsum</h2>
-            </div>
-
-            <form action="#" class="form-horizontal">
-                <fieldset class="padding-sides">
-                    <legend>Lorem Ipsum</legend>
-                    <div class="control-group">
-                        <label for="" class="control-label required">First Name:</label>
-                        <div class="controls"><input type="" required></div>
-                    </div>
-                    <div class="control-group">
-                        <label for="" class="control-label required">Last Name:</label>
-                        <div class="controls"><input type="" required></div>
-                    </div>
-                </fieldset>
-
-                <div class="form-actions padding-sides">
-                    <a href="#" class="pull-left">Cancel</a>
-                    <button class="btn btn-primary btn-large pull-right">Next</button>
+                <div class="margin-bottom">
+                    <a href="#myModal" class="btn btn-primary pull-right pull-fallback margin-bottom" data-toggle="modal"><i class="icon-white icon-plus"></i> Add Account</a>
+                    <h3 class="layout-clear layout-clear-fallback">Bank Accounts</h3>
                 </div>
-            </form>
 
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Recurring</th>
+                            <th>Bank Routing Number</th>
+                            <th>Bank Account Number</th>
+                            <th>Account Description</th>
+                            <th>Status</th>
+                            <th>Last Updated</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No</td>
+                            <td>4532432532</td>
+                            <td>****************4508</td>
+                            <td>Pending</td>
+                            <td>Bank of America</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <ul class="list-horizontal delimit">
+                                    <li><a href="#">Edit</a></li>
+                                    <li><a href="#">Remove</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>No</td>
+                            <td>2343234545</td>
+                            <td>****************2301</td>
+                            <td>Pending</td>
+                            <td>Five County CCU</td>
+                            <td>03/20/2012</td>
+                            <td>
+                                <ul class="list-horizontal delimit">
+                                    <li><a href="#">Edit</a></li>
+                                    <li><a href="#">Remove</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Yes</td>
+                            <td>9685784326</td>
+                            <td>****************9578</td>
+                            <td class="text-green">Active</td>
+                            <td>Chase</td>
+                            <td>11/12/2011</td>
+                            <td>
+                                <ul class="list-horizontal delimit">
+                                    <li><a href="#">Edit</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade hide" id="myModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h3>Modal header</h3>
+            </div>
+            <div class="modal-body">
+                <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
         </div>
     </div>
 
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
     <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.js"><\/script>')</script>
 
     <script src="js/vendor/bootstrap.min.js"></script>
 
     <!-- scripts concatenated and minified via build script -->
     <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
     <!-- end scripts -->
+
+    <script>
+    (function($) {
+
+        // Fullscreen
+        var $containers = $('.navbar > nav > .container, [data-page]');
+        $('[data-fullscreen]').on('click', function() {
+            $containers
+                .toggleClass('container')
+                .toggleClass('container-fluid');
+
+            $('i', this)
+                .toggleClass('icon-resize-full')
+                .toggleClass('icon-resize-small');
+        });
+
+        $('form').submit(function(evt) {
+            evt.preventDefault();
+            $('a[href=#results]').trigger('click');
+        });
+
+        // Tooltips
+        $('[rel=tooltip]').tooltip();
+    }(jQuery));
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en">        <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en">               <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en">                  <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+         More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title></title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="css/application.css">
+    <link rel="stylesheet" href="css/brand.css">
+
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- All JavaScript at the bottom, except this Modernizr build. -->
+    <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+         chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 7]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    <header class="navbar">
+        <nav class="ui-session navbar-inner hidden-phone">
+            <div class="container">
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-briefcase icon-white"></i>ACME Corp | 000000000<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Change Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user icon-white"></i>User12345<b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Preferences</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/">Signout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="ui-navigation">
+            <div class="container">
+                <div class="drop-shadow curved curved-hz-1">
+                    <a href="dashboard.html" class="brand">
+                        <img src="brand/acme/ui-logo.jpg" title="Acme Co.">
+                    </a>
+
+                    <a class="visible-phone pull-right btn" data-toggle="collapse" data-target="#session-collapse">
+                        <i class="icon-cog"></i>
+                    </a>
+
+                    <a class="pull-right btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <div id="nav-collapse" class="nav-collapse">
+                        <ul class="nav nav-pills pull-right">
+                            <li>
+                                <a href="dashboard.html">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Activity<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="users.html">Manage Users</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Payments<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="payments.html">Make Payment</a></li>
+                                    <li><a href="accounts.html">Manage Bank Accounts</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rewards<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account Services<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="session-collapse" class="nav-collapse visible-phone">
+                        <ul class="nav nav-pills">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-briefcase"></i>ACME Corp | 000000000<b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Change Account</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-user"></i>User12345<b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Preferences</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/">Signout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" data-page="payments">
+        <div class="ui-panel">
+
+            <header class="clearfix">
+                <h2 class="pull-left">Make Payment</h2>
+
+                <!-- Breadcrumb :: Hidden Phone -->
+                <nav class="pull-right hidden-phone">
+                    <ul class="breadcrumb">
+                        <li><a href="#" class="brand-secondary">Payments</a> <span class="divider">/</span></li>
+                        <li class="active">Make Payment</li>
+                    </ul>
+                </nav>
+            </header>
+
+
+
+            <ul class="nav nav-tabs stacked-fallback margin-top margin-sides">
+                <li class="active"><a href="#user_information" data-toggle="tab">Step 1: Enter Payment</a></li>
+                <li><a href="#user_summary" data-toggle="tab">Step 2: Verify</a></li>
+                <li><a href="#user_confirmation" data-toggle="tab">Step 3: Confirmation</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="user_information" class="tab-pane active">
+                    <form action="" class="form-horizontal padding-sides">
+
+                        <div class="clearfix">
+                            <div class="pull-right pull-fallback">
+                                <div class="well text-left">
+                                    <p class="lead">Related Links</p>
+                                    <ul>
+                                        <li><a href="#">View Payment History</a></li>
+                                        <li><a href="#">View Activity</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="pull-left pull-fallback">
+                                <div class="control-group margin-no-bottom">
+                                    <label class="control-label">Payment Schedule:</label>
+
+                                    <div class="controls">
+                                        <label class="radio clearfix">
+                                            <input type="radio" name="payment_schedule" value="payment_date" checked>
+                                                One-Time Payment
+                                                <div class="control-group stacked-fallback">
+                                                    <label class="control-label" for="">Payment Date:</label>
+                                                    <div class="controls">
+                                                        <div class="input-append">
+                                                            <input class="span2" id="appendedInputButton" size="16" type="text"><button class="btn" type="button"><i class="icon  icon-calendar"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </label>
+                                        <label class="radio clearfix">
+                                            <input type="radio" name="payment_schedule" value="payment_monthly">
+                                                Repeat Payment
+                                                <div class="control-group stacked-fallback">
+                                                    <label class="control-label" for="">Monthly Payment Date:</label>
+                                                    <div class="controls">
+                                                        <select>
+                                                            <option value="">SELECT (1-31)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Please Note:</strong> Payments received after X:XX pm ET may not be credited until the next day. Scheduled payments will be processed on the date selected.
+                        </div>
+
+                        <div class="padding-top">
+                            <div class="control-group">
+                                <label class="control-label" for="">Bank Account:</label>
+                                <div class="controls">
+                                    <select class="span-auto">
+                                        <option value="">Default Bank Description - XXXX1234</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="">Payment Amount:</label>
+                                <div class="controls">
+                                    <table class="table table-condensed table-borderless table-inline">
+                                        <tbody>
+                                            <tr>
+                                                <td><label class="radio text-gray_dark"><input type="radio" name="payment_amount" value="1" checked> Minimum Amount Due</label></td>
+                                                <td>$86.23</td>
+                                                <td><button class="btn btn-mini" type="button" title="title text" rel="tooltip"><i class="icon-info-sign"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="radio text-gray_dark"><input type="radio" name="payment_amount" value="2"> Full Statement Balance</label></td>
+                                                <td>$2,154.00</td>
+                                                <td><button class="btn btn-mini" type="button" title="title text" rel="tooltip"><i class="icon-info-sign"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="radio text-gray_dark"><input type="radio" name="payment_amount" value="3"> Current Outstanding Balance</label></td>
+                                                <td>$2,422.19</td>
+                                                <td><button class="btn btn-mini" type="button" title="title text" rel="tooltip"><i class="icon-info-sign"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="radio text-gray_dark"><input type="radio" name="payment_amount" value="4"> Other Amount</label></td>
+                                                <td>
+                                                    <div class="input-prepend">
+                                                        <span class="add-on">$</span><input type="text" class="input-small input-small-fallback">
+                                                    </div>
+                                                </td>
+                                                <td><button class="btn btn-mini" type="button" title="title text" rel="tooltip"><i class="icon-info-sign"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="form-actions padding-sides">
+                        <button type="button" class="btn btn-primary btn-large pull-right">Continue</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <!-- scripts concatenated and minified via build script -->
+    <script src="js/plugins.js"></script>
+    <!-- end scripts -->
+
+    <script>
+    (function($) {
+
+        // Fullscreen
+        var $containers = $('.navbar > nav > .container, [data-page]');
+        $('[data-fullscreen]').on('click', function() {
+            $containers
+                .toggleClass('container')
+                .toggleClass('container-fluid');
+
+            $('i', this)
+                .toggleClass('icon-resize-full')
+                .toggleClass('icon-resize-small');
+        });
+
+        $('form').submit(function(evt) {
+            evt.preventDefault();
+            $('a[href=#results]').trigger('click');
+        });
+
+        // Tooltips
+        $('[rel=tooltip]').tooltip();
+    }(jQuery));
+    </script>
+
+</body>
+</html>
