@@ -5222,6 +5222,9 @@ hr {
   border-top: 1px solid #d9d9d9;
   border-bottom: none;
 }
+a  > i.icon {
+  padding-right: 10px;
+}
 .btn:focus {
   outline: none;
 }
@@ -5338,18 +5341,22 @@ select.span-auto {
 @media (min-width: 980px) {
   
 }
+.form-horizontal div.control-label.required:after,
+.form-horizontal span.control-label.required:after {
+  visibility: hidden;
+}
 .form-horizontal .control-label {
   display: block;
   margin-bottom: 5px;
 }
 .form-horizontal .control-label:after {
+  visibility: hidden;
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
 
   *zoom: 1;
   text-align: right !important;
-  visibility: hidden;
   width: 8px;
   content: " *";
   font-weight: bold;
@@ -5593,6 +5600,9 @@ select.span-auto {
     right: auto;
   }
 }
+.form-actions {
+  margin-top: 50px;
+}
 .form-actions a:not(.btn) {
   display: inline-block;
   *display: inline;
@@ -5612,6 +5622,13 @@ select.span-auto {
 }
 .form-actions .pull-right  > .btn + .btn {
   margin-left: 20px;
+}
+.alert {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
 }
 @media (max-width: 767px) {
   .alert strong {

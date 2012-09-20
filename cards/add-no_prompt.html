@@ -30,11 +30,11 @@
 <body>
 
 
-    <div class="container" data-page="cards">
+    <div class="container" data-page="auth">
         <div class="ui-panel">
 
             <header>
-                <h2>Add Card - Standard Driver Card</h2>
+                <h2>Add Card - No-Prompt Card</h2>
             </header>
 
             <div class="padding-all">
@@ -79,12 +79,8 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend class="margin-no-bottom">Driver Information</legend>
 
-                        <div class="control-group">
-                            <label class="control-label required" for="">Driver ID:</label>
-                            <div class="controls"><input type="text" required></div>
-                        </div>
+                        <legend class="margin-no-bottom">Cardholder Information</legend>
 
                         <div class="control-group">
                             <label class="control-label required" for="">First Name:</label>
@@ -119,6 +115,38 @@
 
         </div>
     </div>
+
+
+    <script>
+    (function() {
+        var $fuel_only;
+
+        function init() {
+            $fuel_only = $('#fuel_only');
+
+            bindFuelOnlyLisener();
+        }
+
+        function bindFuelOnlyLisener() {
+            $fuel_only.addClass('invisible');
+
+            $(document.body)
+                .on(':radio','change', handleFuelyOnlyValue)
+                .find(':radio:checked').each(function() {
+                    handleFuelyOnlyValue.call(this);
+                });
+        }
+
+        function handleFuelyOnlyValue() {
+            var is_on = $(this).val() == 'fuel';
+            $fuel_only[is_on ? 'fadeIn' : 'fadeOut']('fast');
+            if (!is_on) $fuel_only.attr('checked', false);
+        }
+
+        WEX(init);
+
+    })();
+    </script>
 
 </body>
 </html>

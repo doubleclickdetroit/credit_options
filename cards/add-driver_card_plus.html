@@ -69,7 +69,7 @@
                                 </label>
                             </div>
 
-                            <div id="fuel_only" class="controls margin-top">
+                            <div id="fuel_only" class="controls margin-top margin-left">
                                 <label class="checkbox">
                                     <input type="checkbox" name="diesel_only">
                                     For fuel, allow Diesel fueld purchase only.
@@ -102,9 +102,9 @@
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label required" for="">Embossing on card:</label>
+                            <label class="control-label required" for="">Embossing on Card:</label>
                             <div class="controls">
-                                <input type="text" required>
+                                <input type="text" placeholder="18 character max" required>
                                 <p class="help-block">Note: It is suggested that you use the cardholder name.</p>
                             </div>
                         </div>
@@ -118,15 +118,15 @@
                             <label class="control-label" for="">Vehicle ID:</label>
                             <div class="controls">
                                 <select class="margin-right"><option vaule="">None</option></select>
-                                <a href="#" class="btn btn-primary">View Vehicle Pool</a>
+                                <a href="#">View Vehicle Pool</a>
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="">Odometer:</label>
                             <div class="controls">
-                                <select class="margin-right"><option value="">None</option></select>
-                                <span class="btn" rel="tooltip" title="Lorem ipsum..."><i class="icon-info-sign"></i></span>
+                                <select class="margin-right" disabled><option value="">None</option></select>
+                                <i class="icon-question-sign" rel="tooltip" title="Lorem ipsum..."></i>
                             </div>
                         </div>
                     </fieldset>
@@ -134,7 +134,10 @@
 
                 <div class="form-actions padding-sides">
                     <a href="#" class="pull-left">Cancel</a>
-                    <button class="btn btn-primary btn-large pull-right">Next</button>
+                    <div class="pull-right">
+                        <button class="btn btn-large">Back</button>
+                        <button class="btn btn-primary btn-large">Next</button>
+                    </div>
                 </div>
             </form>
 
