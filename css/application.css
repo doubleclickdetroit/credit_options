@@ -5313,6 +5313,9 @@ select.span-auto {
     width: 100%;
   }
 }
+.form-horizontal fieldset + fieldset {
+  margin-top: 30px !important;
+}
 .form-horizontal legend  + p {
   margin-right: 20px !important;
   margin-left: 20px !important;
@@ -5435,9 +5438,6 @@ select.span-auto {
   .form-horizontal .control-label  + .controls .readonly-value[class*="input-x"] {
     width: auto;
   }
-}
-.form-horizontal .control-group  + legend {
-  margin-top: 30px !important;
 }
 @media (max-width: 767px) {
   .form-horizontal .control-group.stacked-fallback > label {

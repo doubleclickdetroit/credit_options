@@ -118,13 +118,21 @@ select.span-auto { width: auto; }
 
 .form-horizontal {
 
+	.margin-top-xlarge() {
+		margin-top: @gridGutterWidth + 10 !important;
+	}
+
+	fieldset + fieldset {
+		.margin-top-xlarge;
+	}
+
 	legend {
 		& + p {
 			.margin-all;
 			.text-gray_light;
 
 			& + .control-group {
-				margin-top: @gridGutterWidth + 10 !important;
+				.margin-top-xlarge;
 			}
 		}
 	}
@@ -211,10 +219,6 @@ select.span-auto { width: auto; }
 	}
 
 	.control-group {
-
-		& + legend {
-			margin-top: @gridGutterWidth + 10 !important;
-		}
 
 		&.stacked-fallback {
 			// UP TO LANDSCAPE PHONE
