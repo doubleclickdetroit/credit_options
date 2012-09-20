@@ -124,7 +124,7 @@ select.span-auto { width: auto; }
 			.text-gray_light;
 
 			& + .control-group {
-				.margin-top;
+				margin-top: @gridGutterWidth + 10 !important;
 			}
 		}
 	}
@@ -198,14 +198,23 @@ select.span-auto { width: auto; }
 				.text-gray_light;
 				padding: 4px;
 			}
+
 			.readonly-value.input-xlarge   { .input-xlarge;  }
 			.readonly-value.input-xxlarge  { .input-xxlarge; }
+
+			@media (max-width: 767px) {
+				.readonly-value[class*="input-x"] {
+					width: auto;
+				}
+			}
 		}
 	}
 
 	.control-group {
 
-		& + legend { .margin-top; }
+		& + legend {
+			margin-top: @gridGutterWidth + 10 !important;
+		}
 
 		&.stacked-fallback {
 			// UP TO LANDSCAPE PHONE

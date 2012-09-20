@@ -5321,7 +5321,7 @@ select.span-auto {
   color: #999999 !important;
 }
 .form-horizontal legend  + p  + .control-group {
-  margin-top: 20px !important;
+  margin-top: 30px !important;
 }
 .form-horizontal label.radio div,
 .form-horizontal label.checkbox div,
@@ -5431,8 +5431,13 @@ select.span-auto {
 .form-horizontal .control-label  + .controls .readonly-value.input-xxlarge {
   width: 530px;
 }
+@media (max-width: 767px) {
+  .form-horizontal .control-label  + .controls .readonly-value[class*="input-x"] {
+    width: auto;
+  }
+}
 .form-horizontal .control-group  + legend {
-  margin-top: 20px !important;
+  margin-top: 30px !important;
 }
 @media (max-width: 767px) {
   .form-horizontal .control-group.stacked-fallback > label {
