@@ -5032,6 +5032,14 @@ a.badge:hover {
 .text-success {
   color: #468847 !important;
 }
+.text-yellow,
+.text-caution {
+  color: #c09853 !important;
+}
+.text-blue,
+.text-info {
+  color: #3a87ad !important;
+}
 .text-gray {
   color: #555555 !important;
 }
