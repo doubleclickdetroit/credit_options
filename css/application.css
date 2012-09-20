@@ -5221,16 +5221,6 @@ body {
 legend {
   margin-bottom: 0 !important;
 }
-legend  + p {
-  margin-right: 20px !important;
-  margin-left: 20px !important;
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  color: #999999 !important;
-}
-legend  + p  + .control-group {
-  margin-top: 20px !important;
-}
 hr {
   border-top: 1px solid #d9d9d9;
   border-bottom: none;
@@ -5322,6 +5312,16 @@ select.span-auto {
   .input-small.input-small-fallback {
     width: 100%;
   }
+}
+.form-horizontal legend  + p {
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: #999999 !important;
+}
+.form-horizontal legend  + p  + .control-group {
+  margin-top: 20px !important;
 }
 .form-horizontal label.radio div,
 .form-horizontal label.checkbox div,
@@ -5430,6 +5430,9 @@ select.span-auto {
 }
 .form-horizontal .control-label  + .controls .readonly-value.input-xxlarge {
   width: 530px;
+}
+.form-horizontal .control-group  + legend {
+  margin-top: 20px !important;
 }
 @media (max-width: 767px) {
   .form-horizontal .control-group.stacked-fallback > label {
