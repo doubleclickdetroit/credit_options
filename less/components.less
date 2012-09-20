@@ -21,6 +21,19 @@ body {
 /*******************************************************************************
 **** Elements
 *******************************************************************************/
+legend {
+	.margin-no-bottom;
+
+	& + p {
+		.margin-all;
+		.text-gray_light;
+
+		& + .control-group {
+			.margin-top;
+		}
+	}
+}
+
 hr {
 	border-top: 1px solid lighten(@grayLight, 25%);
 	border-bottom: none;
@@ -185,6 +198,8 @@ select.span-auto { width: auto; }
 				.text-gray_light;
 				padding: 4px;
 			}
+			.readonly-value.input-xlarge   { .input-xlarge;  }
+			.readonly-value.input-xxlarge  { .input-xxlarge; }
 		}
 	}
 

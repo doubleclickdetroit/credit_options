@@ -5218,6 +5218,19 @@ body {
 /*******************************************************************************
 **** Elements
 *******************************************************************************/
+legend {
+  margin-bottom: 0 !important;
+}
+legend  + p {
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: #999999 !important;
+}
+legend  + p  + .control-group {
+  margin-top: 20px !important;
+}
 hr {
   border-top: 1px solid #d9d9d9;
   border-bottom: none;
@@ -5411,6 +5424,12 @@ select.span-auto {
   padding-left: 5px;
   color: #999999 !important;
   padding: 4px;
+}
+.form-horizontal .control-label  + .controls .readonly-value.input-xlarge {
+  width: 270px;
+}
+.form-horizontal .control-label  + .controls .readonly-value.input-xxlarge {
+  width: 530px;
 }
 @media (max-width: 767px) {
   .form-horizontal .control-group.stacked-fallback > label {
