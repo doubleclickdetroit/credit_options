@@ -33,10 +33,10 @@
 .padding-no-tops   { .padding-no-top(); .padding-no-bottom(); }
 .padding-none    { .padding-no-sides(); .padding-no-tops(); }
 
-.text-red, .text-error      { color: @errorText !important;   }
-.text-green, .text-success  { color: @successText !important; }
-.text-yellow, .text-caution { color: @warningText !important; }
-.text-blue, .text-info      { color: @infoText !important;    }
+.text-red, .text-error     { color: @errorText !important;   }
+.text-green, .text-success { color: @successText !important; }
+.text-yellow, .text-warn   { color: @warningText !important; }
+.text-blue, .text-info     { color: @infoText !important;    }
 
 .text-gray         { color: @gray !important;        }
 .text-gray_light   { color: @grayLight !important;   }
@@ -70,6 +70,18 @@
 		@media (max-width: 767px) {
 			clear: both;
 		}
+	}
+}
+
+// Override to Responsive Utility Classes
+[class*="hidden-"] {
+	&.visible,
+	&.override,
+	&.layout-block {
+		display: block !important;
+	}
+	&.layout-inlineblock {
+		display: inline-block !important;
 	}
 }
 

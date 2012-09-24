@@ -5033,7 +5033,7 @@ a.badge:hover {
   color: #468847 !important;
 }
 .text-yellow,
-.text-caution {
+.text-warn {
   color: #c09853 !important;
 }
 .text-blue,
@@ -5098,6 +5098,14 @@ a.badge:hover {
   .layout-clear.layout-clear-fallback {
     clear: both;
   }
+}
+[class*="hidden-"].visible,
+[class*="hidden-"].override,
+[class*="hidden-"].layout-block {
+  display: block !important;
+}
+[class*="hidden-"].layout-inlineblock {
+  display: inline-block !important;
 }
 @media (max-width: 767px) {
   .pull-left.pull-fallback {
