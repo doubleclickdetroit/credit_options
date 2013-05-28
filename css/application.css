@@ -5221,9 +5221,9 @@ body {
     background-repeat: repeat-x;
     background-image: -moz-linear-gradient(90deg, #ffffff 30%, #c3ddeb);
     background-image: -ms-linear-gradient(90deg, #ffffff 30%, #c3ddeb);
-    background-image: -webkit-linear-gradient(90deg, #ffffff 30%, #c3ddeb);
     background-image: -o-linear-gradient(90deg, #ffffff 30%, #c3ddeb);
     background-image: linear-gradient(90deg, #ffffff 30%, #c3ddeb);
+    background-image: -webkit-linear-gradient(90deg, #ffffff 30%, #c3ddeb);
   }
 }
 @media (max-width: 767px) {
@@ -5255,11 +5255,13 @@ a  > i.icon {
 }
 @media (min-width: 768px) {
   [data-page] {
+    /*
     -webkit-transition: width 0.5s ease-in-out;
     -moz-transition: width 0.5s ease-in-out;
     -ms-transition: width 0.5s ease-in-out;
     -o-transition: width 0.5s ease-in-out;
     transition: width 0.5s ease-in-out;
+    */
   }
 }
 @media (max-width: 767px) {
@@ -5270,6 +5272,16 @@ a  > i.icon {
 [data-page] header {
   line-height: 50px;
   border-bottom: 1px solid #eeeeee;
+
+  *zoom: 1;
+}
+[data-page] header:before,
+[data-page] header:after {
+  display: table;
+  content: "";
+}
+[data-page] header:after {
+  clear: both;
 }
 [data-page] header h1,
 [data-page] header h2,
@@ -5284,6 +5296,64 @@ a  > i.icon {
 [data-page] header h2,
 [data-page] header h3 {
   font-size: 20px;
+}
+[data-page] header > h1:not(:only-child),
+[data-page] header > h2:not(:only-child),
+[data-page] header > h3:not(:only-child) {
+  float: left;
+}
+[data-page] header > h1 + [data-module=breadcrumb],
+[data-page] header > h2 + [data-module=breadcrumb],
+[data-page] header > h3 + [data-module=breadcrumb] {
+  float: right;
+}
+[data-page] header > h1 + [data-module=breadcrumb] ul,
+[data-page] header > h2 + [data-module=breadcrumb] ul,
+[data-page] header > h3 + [data-module=breadcrumb] ul {
+  padding: 8px 15px;
+  margin: 0 0 20px;
+  list-style: none;
+  color: #999999;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin: 8px 8px 8px 0;
+  line-height: normal;
+  border: none;
+  background: none;
+}
+[data-page] header > h1 + [data-module=breadcrumb] ul li,
+[data-page] header > h2 + [data-module=breadcrumb] ul li,
+[data-page] header > h3 + [data-module=breadcrumb] ul li {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  text-shadow: 0 1px 0 #ffffff;
+}
+[data-page] header > h1 + [data-module=breadcrumb] ul .divider,
+[data-page] header > h2 + [data-module=breadcrumb] ul .divider,
+[data-page] header > h3 + [data-module=breadcrumb] ul .divider {
+  padding: 0 5px;
+  color: #ccc;
+}
+[data-page] header > h1 + [data-module=breadcrumb] ul .active,
+[data-page] header > h2 + [data-module=breadcrumb] ul .active,
+[data-page] header > h3 + [data-module=breadcrumb] ul .active {
+  color: #999999;
+}
+[data-page] header.subhead {
+  margin-bottom: 20px !important;
+}
+[data-page] legend,
+[data-page] header.subhead h1,
+[data-page] header.subhead h2,
+[data-page] header.subhead h3 {
+  padding-left: 0 !important;
+  line-height: 25px;
+  font-size: 15px;
 }
 [data-page] header .breadcrumb {
   margin: 8px 8px 8px 0;
@@ -5361,7 +5431,7 @@ select.span-auto {
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  
+
 }
 @media (min-width: 768px) and (max-width: 979px) {
   .form-horizontal div.control-label,
@@ -5371,7 +5441,7 @@ select.span-auto {
   }
 }
 @media (min-width: 980px) {
-  
+
 }
 .form-horizontal div.control-label.required:after,
 .form-horizontal span.control-label.required:after {
@@ -5408,7 +5478,7 @@ select.span-auto {
   margin-left: 0 !important;
 }
 @media (max-width: 480px) {
-  
+
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .form-horizontal .control-label.layout-inline {
@@ -5420,7 +5490,7 @@ select.span-auto {
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  
+
 }
 @media (min-width: 980px) {
   .form-horizontal .control-label.layout-inline {
@@ -5473,7 +5543,7 @@ select.span-auto {
   margin-left: 60px;
 }
 @media (max-width: 480px) {
-  
+
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .form-horizontal .control-group .controls.margin-small {
@@ -5481,7 +5551,7 @@ select.span-auto {
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  
+
 }
 @media (min-width: 980px) {
   .form-horizontal .control-group .controls.margin-small {

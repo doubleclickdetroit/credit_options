@@ -25,7 +25,8 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
     <!-- All JavaScript at the bottom, except this Modernizr build. -->
-    <script src="js/vendor/modernizr-2.5.3.min.js"></script>
+    <script src="js/vendor/modernizr.custom.82447.js"></script>
+    <script src="js/WEX.js"></script>
 </head>
 <body>
 
@@ -195,7 +196,7 @@
                                     </div>
                                 </fieldset>
                             </div>
-                            
+
                             <div class="span6 margin-bottom">
                                 <fieldset class="padding-sides">
                                 	<legend>Security Questions</legend>
@@ -208,7 +209,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="control-group">
                                         <label class="control-label" for="">Answer:</label>
                                         <div class="controls"><input type="text" required></div>
@@ -228,7 +229,7 @@
                                 </fieldset>
                             </div>
                         </div>
-                        
+
                         <!-- Terms of Use -->
                         <div class="row">
                             <div class="span12 margin-bottom">
@@ -238,12 +239,12 @@
                                     <div class="control-group">
                                     <div class="controls">
                                        	<label>Terms of Use:</label>
-                                        	<textarea rows="10" class="span8">Sed do eiusmod tempor incididunt ut aliquip ex ea commodo consequat. Consectetur adipisicing elit, eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt ut labore et dolore magna aliqua. Duis aute irure dolor sed do eiusmod tempor incididunt lorem ipsum dolor sit amet. Sunt in culpa eu fugiat nulla pariatur. Consectetur adipisicing elit, ut aliquip ex ea commodo consequat. Ut labore et dolore magna aliqua. Mollit anim id est laborum. Ut enim ad minim veniam. Ut labore et dolore magna aliqua. Eu fugiat nulla pariatur. Sed do eiusmod tempor incididunt excepteur sint occaecat consectetur adipisicing elit.                                              Quis nostrud exercitation ut aliquip ex ea commodo consequat. Ut labore et dolore magna aliqua. Qui officia deserunt sed do eiusmod tempor incididunt consectetur adipisicing elit. Quis nostrud exercitation eu fugiat nulla pariatur. Excepteur sint occaecat ullamco laboris nisi sunt in culpa. Velit esse cillum dolore. Consectetur adipisicing elit, ullamco laboris nisi ut enim ad minim veniam. reprehenderit in voluptate excepteur sint occaecat sunt in culpa. Quis nostrud exercitation ut aliquip ex ea commodo consequat. Mollit anim id est laborum.                                             
+                                        	<textarea rows="10" class="span8">Sed do eiusmod tempor incididunt ut aliquip ex ea commodo consequat. Consectetur adipisicing elit, eu fugiat nulla pariatur. Sunt in culpa qui officia deserunt ut labore et dolore magna aliqua. Duis aute irure dolor sed do eiusmod tempor incididunt lorem ipsum dolor sit amet. Sunt in culpa eu fugiat nulla pariatur. Consectetur adipisicing elit, ut aliquip ex ea commodo consequat. Ut labore et dolore magna aliqua. Mollit anim id est laborum. Ut enim ad minim veniam. Ut labore et dolore magna aliqua. Eu fugiat nulla pariatur. Sed do eiusmod tempor incididunt excepteur sint occaecat consectetur adipisicing elit.                                              Quis nostrud exercitation ut aliquip ex ea commodo consequat. Ut labore et dolore magna aliqua. Qui officia deserunt sed do eiusmod tempor incididunt consectetur adipisicing elit. Quis nostrud exercitation eu fugiat nulla pariatur. Excepteur sint occaecat ullamco laboris nisi sunt in culpa. Velit esse cillum dolore. Consectetur adipisicing elit, ullamco laboris nisi ut enim ad minim veniam. reprehenderit in voluptate excepteur sint occaecat sunt in culpa. Quis nostrud exercitation ut aliquip ex ea commodo consequat. Mollit anim id est laborum.
                                             </textarea>
                                         </div>
                                         <div class="controls">
                                         	<label  class="checkbox">
-                                        		<input type="checkbox" required> 
+                                        		<input type="checkbox" required>
                                                 I have read and agreed to the above Terms of Use.
                                             </label>
                                         </div>
@@ -258,48 +259,11 @@
                         </div>
                     </form>
                 </div>
-           
+
             </div>
 
         </div>
     </div>
-
-
-    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-
-    <!-- scripts concatenated and minified via build script -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <!-- end scripts -->
-
-    <script>
-    (function($) {
-
-        // Fullscreen
-        var $containers = $('.navbar > nav > .container, [data-page]');
-        $('[data-fullscreen]').on('click', function() {
-            $containers
-                .toggleClass('container')
-                .toggleClass('container-fluid');
-
-            $('i', this)
-                .toggleClass('icon-resize-full')
-                .toggleClass('icon-resize-small');
-        });
-
-        $('form').submit(function(evt) {
-            evt.preventDefault();
-            $('a[href=#results]').trigger('click');
-        });
-
-        // Tooltips
-        $('[rel=tooltip]').tooltip();
-    }(jQuery));
-    </script>
 
 </body>
 </html>

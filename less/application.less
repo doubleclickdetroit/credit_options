@@ -1,14 +1,20 @@
-/*******************************************************************************
-**** Core
-*******************************************************************************/
+/*!
+ * Bootstrap v2.1.0
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// CSS Reset
 @import "reset.less";
-@import "variables.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "mixins.less";
 
-
-/*******************************************************************************
-**** Bootstrap
-*******************************************************************************/
 // Grid system and page structure
 @import "scaffolding.less";
 @import "grid.less";
@@ -52,32 +58,13 @@
 @import "carousel.less";
 @import "hero-unit.less";
 
+// Responsive Design
+@import "responsive.less";
 
-/*******************************************************************************
-**** Responsive Design
-*******************************************************************************/
-// RESPONSIVE CLASSES
-@import "responsive-utilities.less";
-
-// MEDIA QUERIES
-@import "responsive-767px-max.less";   // Phones to portrait tablets and narrow desktops
-@import "responsive-768px-979px.less"; // Tablets to regular desktops
-@import "responsive-1200px-min.less";  // Large desktops
-
-// RESPONSIVE NAVBAR
-// From 979px and below, show a button to toggle navbar contents
-@import "responsive-navbar.less";
-
-
-/*******************************************************************************
-**** User Interface
-*******************************************************************************/
+// Application: UI
 @import "base.less";
 @import "navigation.less";
 @import "components.less";
 
-
-/*******************************************************************************
-**** Additional
-*******************************************************************************/
-@import "utilities.less"; // must be last to override when necessary
+// Utility classes
+@import "utilities.less"; // Has to be last to override when necessary

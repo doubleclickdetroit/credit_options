@@ -66,12 +66,33 @@ a {
 		}
 		h1, h2, h3 { font-size: 20px; }
 
-		// Breadcrumb
-		.breadcrumb {
-			margin: 8px 8px 8px 0;
-			line-height: normal;
-			border: none;
-			background: none;
+		& > h1, & > h2, & > h3 {
+			&:not(:only-child) {
+				.pull-left;
+			}
+
+			& + [data-module=breadcrumb] {
+				.pull-right;
+
+				ul {
+					.breadcrumb;
+
+					margin: 8px 8px 8px 0;
+					line-height: normal;
+					border: none;
+					color: @grayLight ;
+					background: none;
+				}
+			}
+		}
+
+		&.subhead {
+			.margin-bottom;
+
+			h1, h2, h3 {
+				.padding-no-left;
+				line-height: 35px;
+			}
 		}
 
 		// Subnav
@@ -207,12 +228,13 @@ select.span-auto { width: auto; }
 				padding: 4px;
 			}
 
+			.readonly-value.input-auto     { width: auto;    }
 			.readonly-value.input-xlarge   { .input-xlarge;  }
 			.readonly-value.input-xxlarge  { .input-xxlarge; }
 
 			@media (max-width: 767px) {
 				.readonly-value[class*="input-x"] {
-					width: auto;
+					.readonly-value.input-auto;
 				}
 			}
 		}
@@ -254,7 +276,22 @@ select.span-auto { width: auto; }
 				@media (min-width: 768px) and (max-width: 979px) {            } // block
 				@media (min-width: 980px)                        { .margin-left; } // inline
 			}
+
+			label.radio {
+				& > .help-inline { .margin-no-top; }
+			}
 		}
+	}
+}
+
+
+
+/***************************************************************************
+**** Modals
+***************************************************************************/
+.modal {
+	&[class*="span"] {
+		.margin-no-left;
 	}
 }
 

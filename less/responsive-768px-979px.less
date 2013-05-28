@@ -1,38 +1,19 @@
-// PORTRAIT TABLET TO DEFAULT DESKTOP
-// ----------------------------------
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
 
 @media (min-width: 768px) and (max-width: 979px) {
 
   // Fixed grid
-  #grid > .core(42px, 20px);
+  #grid > .core(@gridColumnWidth768, @gridGutterWidth768);
 
   // Fluid grid
-  #grid > .fluid(5.801104972%, 2.762430939%);
+  #grid > .fluid(@fluidGridColumnWidth768, @fluidGridGutterWidth768);
 
   // Input grid
-  #grid > .input(42px, 20px);
+  #grid > .input(@gridColumnWidth768, @gridGutterWidth768);
 
   // No need to reset .thumbnails here since it's the same @gridGutterWidth
-
-  // Remove the horizontal form styles
-  .form-horizontal .control-group > label {
-    float: none;
-    width: auto;
-    padding-top: 0;
-    text-align: left;
-  }
-  // Move over all input controls and content
-  .form-horizontal .controls {
-    margin-left: 0;
-  }
-  // Move the options list down to align with labels
-  .form-horizontal .control-list {
-    padding-top: 0; // has to be padding because margin collaspes
-  }
-  // Move over buttons in .form-actions to align with .controls
-  .form-horizontal .form-actions {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 
 }
